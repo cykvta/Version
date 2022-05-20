@@ -1,0 +1,5 @@
+name: EtheriaCore
+version: '${project.version}'
+main: cykuta.etheriacore.EtheriaCore
+api-version: 1.18
+authors: [ Cykuta ]
