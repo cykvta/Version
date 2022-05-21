@@ -1,4 +1,4 @@
-package cykuta.etheriacore.Utils;
+package cykuta.etheriacore.utils;
 
 import cykuta.etheriacore.EtheriaCore;
 
@@ -20,6 +20,10 @@ public class ConfigManager {
             plugin.getConfig().options().copyDefaults(true);
             plugin.saveConfig();
         }
+    }
+
+    public String getVersionUrl(){
+        return plugin.getConfig().getString("version_url");
     }
 
     public List<String> getBannedItems(){

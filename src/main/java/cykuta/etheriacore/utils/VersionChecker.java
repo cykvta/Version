@@ -1,4 +1,4 @@
-package cykuta.etheriacore.Utils;
+package cykuta.etheriacore.utils;
 
 import cykuta.etheriacore.EtheriaCore;
 import org.bukkit.Bukkit;
@@ -13,23 +13,14 @@ import java.net.URL;
 public class VersionChecker {
     public EtheriaCore plugin;
     public static boolean oldVersion = false;
+    private static String url;
 
     //Constructor
     public VersionChecker(EtheriaCore plugin) {
         this.plugin = plugin;
+        ConfigManager cfg = new ConfigManager(plugin);
+        url = cfg.getVersionUrl();
     };
-
-    //Verifica si el string es la version correcta
-    public static boolean checkUpdates(String version){
-        try{
-            String r = getRequest("https://cykvta.github.io/EtheriaCore/EtheriaCore.txt");
-            if (!r.equals(version)) return true;
-        }catch (Exception e){
-            Bukkit.getConsoleSender().sendMessage(Chat.color("&c[FATAL ERROR] Hay un error interno en" +
-                    " EtheriaCore porfavor validalo antes de continuar cod: "+ e));
-        }
-        return false;
-    }
 
     //Response desde web
     public static String getRequest(String url) throws IOException{
@@ -45,6 +36,17 @@ public class VersionChecker {
         }
         input.close();
         return response.toString();
+    }
+
+    //Verifica si el string es la version correcta
+    public boolean checkUpdates(String version){
+        try{
+            String r = getRequest(url);
+            if (!r.equals(version)) return true;
+        }catch (Exception e){
+            Bukkit.getConsoleSender().sendMessage(Chat.color("&c[FATAL ERROR] Error en la config: version_url"));
+        }
+        return false;
     }
 
     //Mensaje a la consola del server

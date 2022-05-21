@@ -3,3 +3,10 @@ version: '${project.version}'
 main: cykuta.etheriacore.EtheriaCore
 api-version: 1.18
 authors: [ Cykuta ]
+commands:
+  tpa:
+    description: Teleport to other user
+  tpaccept:
+    description: Accept teleport to other user
+  tpdeny:
+    description: Deny teleport to other user

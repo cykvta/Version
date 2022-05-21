@@ -1,4 +1,4 @@
-package cykuta.etheriacore.Events;
+package cykuta.etheriacore.events;
 
 import cykuta.etheriacore.EtheriaCore;
 import org.bukkit.plugin.PluginManager;
@@ -13,6 +13,6 @@ public class EventRegister {
     }
 
     public void registerEvents(){
-        pluginManager.registerEvents(new BlockCraft(plugin), plugin);
+        pluginManager.registerEvents(new VersionOnJoin(plugin), plugin);
     }
 }
