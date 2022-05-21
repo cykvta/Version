@@ -14,7 +14,7 @@ public class CommandRegister {
 
     public void registerCommands(){
         plugin.getCommand("tpa").setExecutor(new Tpa(plugin));
-        plugin.getCommand("tpaccept").setExecutor(new Tpaccept());
-        plugin.getCommand("tpdeny").setExecutor(new Tpdeny());
+        plugin.getCommand("tpaccept").setExecutor(new Tpaccept(plugin));
+        plugin.getCommand("tpdeny").setExecutor(new Tpdeny(plugin));
     }
 }

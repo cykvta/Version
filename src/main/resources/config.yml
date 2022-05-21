@@ -1,3 +1,9 @@
 version_url: "https://www.cykuta.icu/etheria/core_version.txt"
-banitem:
-  - IRON_SWORD
+lang:
+  main-prefix: '&6[CORE] &7'
+  error-prefix: '&4[ERROR] &c'
+  error-player-command: 'Este comando solo funciona en jugadores.'
+  error-usage: 'Error de sintaxis usa: %s'
+  error-no-player: 'El jugador no esta conectado.'
+  error-auto-target: 'No puedes te puedes enviar una peticion de teletransporte a ti mismo.'
+  error-no-request: 'No tienes peticiones pendientes.'

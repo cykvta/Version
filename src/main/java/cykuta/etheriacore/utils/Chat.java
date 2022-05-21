@@ -9,10 +9,6 @@ public class Chat {
         return ChatColor.translateAlternateColorCodes('&', msg);
     }
 
-    public static void playerError( Player player, String msg){
-        player.sendMessage(Chat.color("&4[Error] &c" + msg));
-    }
-
     public static void playerMsg( Player player, String msg){
         player.sendMessage(Chat.color("&6[Core] &7" + msg));
     }

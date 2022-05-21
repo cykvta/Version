@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class Tpa implements CommandExecutor {
     private final EtheriaCore plugin;
+    private final String usage = "/tpa <player>";
+
     public Tpa(EtheriaCore plugin){
         this.plugin = plugin;
     }
@@ -19,24 +21,24 @@ public class Tpa implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(!(sender instanceof Player)){
-            Chat.consoleError("Este comando solo funciona en jugadores.");
+            Chat.consoleError(plugin.error_prefix + plugin.lang.getString("error-player-command"));
             return false;
         }
         Player player = (Player) sender;
 
         if(args.length != 1){
-            Chat.playerError(player, "Error de sintaxis, usa: /tpa <player>.");
+            Chat.playerMsg(player, plugin.error_prefix + plugin.lang.getString("error-usage").format(usage));
             return false;
         }
         Player target = Bukkit.getPlayer(args[0]);
 
         if (target == null){
-            Chat.playerError(player, "Este jugador no esta conectado.");
+            Chat.playerMsg(player, plugin.error_prefix + plugin.lang.getString("error-no-player"));
             return false;
         }
 
         if (target == player){
-            Chat.playerError(player, "No puedes te puedes enviar una peticion de teletransporte a ti mismo.");
+            Chat.playerMsg(player, plugin.error_prefix + plugin.lang.getString("error-auto-target"));
             return false;
         }
 
