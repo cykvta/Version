@@ -19,7 +19,7 @@ public class Tpaccept implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(CommandUtils.isPlayer(plugin, sender)) return false;
+        if(!CommandUtils.isPlayer(plugin, sender)) return false;
 
         Player player = (Player) sender;
         if (!TpaRequest.hasRequest(player)){
