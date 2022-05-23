@@ -1,6 +1,7 @@
 package cykuta.etheriacore.events;
 
 import cykuta.etheriacore.EtheriaCore;
+import cykuta.etheriacore.utils.Chat;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,7 +17,7 @@ public class JoinAnnounce implements Listener {
 
     @EventHandler
     public void playerJoin(PlayerJoinEvent e){
-        String msg = plugin.cfg.getString("join-msg-replace");
+        String msg = Chat.color(plugin.cfg.getString("join-msg-replace"));
         if (msg.equalsIgnoreCase("none")) return;
         Player player = e.getPlayer();
         e.setJoinMessage(msg.replaceAll("%format%", player.getName()));
