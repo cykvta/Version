@@ -10,7 +10,7 @@ public class Chat {
     }
 
     public static void playerMsg( Player player, String msg){
-        player.sendMessage(Chat.color("&6[Core] &7" + msg));
+        player.sendMessage(Chat.color(msg));
     }
 
     public static void consoleError(String msg){

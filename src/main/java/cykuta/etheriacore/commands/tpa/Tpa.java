@@ -42,14 +42,18 @@ public class Tpa implements CommandExecutor {
 
         if (target == player){
             Chat.playerMsg(player, plugin.error_prefix +
-                    plugin.lang.getString("error-auto-target"));
+                    plugin.lang.getString("error-auto-target")
+                            .replaceAll("%usage%", usage));
             return false;
         }
 
         TpaRequest.newRequest(player, target);
-        Chat.playerMsg(player, "Realizaste una peticion de teletrasporte a &6" + target.getName() + "&7.");
-        Chat.playerMsg(target, "El usuario &6" + sender.getName() + " &7quiere teletrasnportarse contigo.");
-        Chat.playerMsg(target, "&7Para responder usa: &a/aceptar &7o &c/denegar");
+        Chat.playerMsg(player, plugin.main_prefix +
+                plugin.lang.getString("teleport-send")
+                        .replaceAll("%player%", target.getName()));
+
+        Chat.playerMsg(target, plugin.lang.getString("teleport-request").replaceAll("%player%", player.getName()));
+        Chat.playerMsg(target, plugin.lang.getString("teleport-actions").replaceAll("%player%", player.getName()));
         new TpaTimer(player, target).runTaskLaterAsynchronously(plugin,120L);
         return true;
     }
