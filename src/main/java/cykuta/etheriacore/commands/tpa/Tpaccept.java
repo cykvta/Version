@@ -2,6 +2,7 @@ package cykuta.etheriacore.commands.tpa;
 
 import cykuta.etheriacore.EtheriaCore;
 import cykuta.etheriacore.utils.Chat;
+import cykuta.etheriacore.utils.CommandUtils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -18,10 +19,8 @@ public class Tpaccept implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(!(sender instanceof Player)){
-            Chat.consoleMsg(plugin.error_prefix + plugin.lang.getString("error-player-command"));
-            return false;
-        }
+        if(CommandUtils.isPlayer(plugin, sender)) return false;
+
         Player player = (Player) sender;
         if (!TpaRequest.hasRequest(player)){
             Chat.consoleMsg(plugin.error_prefix + plugin.lang.getString("error-no-request"));
