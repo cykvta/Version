@@ -31,8 +31,10 @@ public class Tpaccept implements CommandExecutor {
         Player tpSender = TpaRequest.fetchPlayer(player);
         TpaRequest.removeRequest(player);
         tpSender.teleport(player.getLocation());
-        Chat.playerMsg(player, plugin.lang.getString("teleport-accept").replaceAll("%player%", player.getName()));
-        Chat.playerMsg(player, plugin.lang.getString("teleport-accepted").replaceAll("%player%", player.getName()));
+        Chat.playerMsg(player, plugin.main_prefix +
+                plugin.lang.getString("teleport-accept").replaceAll("%player%", player.getName()));
+        Chat.playerMsg(tpSender, plugin.main_prefix +
+                plugin.lang.getString("teleport-accepted").replaceAll("%player%", player.getName()));
         return true;
     }
 }

@@ -29,8 +29,10 @@ public class Tpdeny implements CommandExecutor {
 
         Player tpSender = TpaRequest.fetchPlayer(player);
         TpaRequest.removeRequest(player);
-        Chat.playerMsg(player, plugin.lang.getString("teleport-reject").replaceAll("%player%", player.getName()));
-        Chat.playerMsg(player, plugin.lang.getString("teleport-rejected").replaceAll("%player%", tpSender.getName()));
+        Chat.playerMsg(player, plugin.main_prefix +
+                plugin.lang.getString("teleport-reject").replaceAll("%player%", player.getName()));
+        Chat.playerMsg(tpSender, plugin.main_prefix +
+                plugin.lang.getString("teleport-rejected").replaceAll("%player%", tpSender.getName()));
 
         return false;
     }
