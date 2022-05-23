@@ -22,6 +22,10 @@ public class ConfigManager {
         }
     }
 
+    public long secondToTicks(int sec){
+        return sec * 20L;
+    };
+
     public String getVersionUrl(){
         return plugin.getConfig().getString("version_url");
     }

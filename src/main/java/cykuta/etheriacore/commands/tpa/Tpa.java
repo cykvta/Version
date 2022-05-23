@@ -1,6 +1,6 @@
 package cykuta.etheriacore.commands.tpa;
 
-import cykuta.etheriacore.commands.tpa.task.TpaExpired;
+import cykuta.etheriacore.commands.tpa.task.TpaTimer;
 import cykuta.etheriacore.EtheriaCore;
 import cykuta.etheriacore.utils.Chat;
 import org.bukkit.Bukkit;
@@ -47,7 +47,10 @@ public class Tpa implements CommandExecutor {
         }
 
         TpaRequest.newRequest(player, target);
-        new TpaExpired(player, target).runTaskLaterAsynchronously(plugin,120L);
+        Chat.playerMsg(player, "Realizaste una peticion de teletrasporte a &6" + target.getName() + "&7.");
+        Chat.playerMsg(target, "El usuario &6" + sender.getName() + " &7quiere teletrasnportarse contigo.");
+        Chat.playerMsg(target, "&7Para responder usa: &a/aceptar &7o &c/denegar");
+        new TpaTimer(player, target).runTaskLaterAsynchronously(plugin,120L);
         return true;
     }
 }

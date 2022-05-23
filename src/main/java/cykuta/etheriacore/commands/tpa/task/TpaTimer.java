@@ -5,11 +5,11 @@ import cykuta.etheriacore.commands.tpa.TpaRequest;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class TpaExpired extends BukkitRunnable {
+public class TpaTimer extends BukkitRunnable {
     private final Player sender;
     private final Player target;
 
-    public TpaExpired (Player sender, Player target){
+    public TpaTimer(Player sender, Player target){
         this.sender = sender;
         this.target = target;
     }
