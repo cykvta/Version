@@ -40,21 +40,20 @@ public class VersionChecker {
 
     //Verifica si el string es la version correcta
     public boolean checkUpdates(String version){
+
         try{
             String r = getRequest(url);
             if (!r.equals(version)) return true;
         }catch (Exception e){
-            Bukkit.getConsoleSender().sendMessage(Chat.color("&c[FATAL ERROR] Error en la config: version_url"));
+            Chat.consoleMsg(plugin.error_prefix + "config: version_url error");
         }
         return false;
     }
 
     //Mensaje a la consola del server
-    public static void sendConsoleMessage(){
-        ConsoleCommandSender console = Bukkit.getConsoleSender();
-        console.sendMessage(Chat.color(""));
-        console.sendMessage(Chat.color("&6ETHERIA CORE"));
-        console.sendMessage(Chat.color("&aEl plugin tiene una Actualizacion disponible"));
-        console.sendMessage(Chat.color(""));
+    public void sendConsoleMessage(){
+        Chat.consoleMsg("");
+        Chat.consoleMsg(plugin.main_prefix + "&aNew version available");
+        Chat.consoleMsg("");
     }
 }

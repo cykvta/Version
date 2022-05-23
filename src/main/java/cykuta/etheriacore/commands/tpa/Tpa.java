@@ -21,7 +21,7 @@ public class Tpa implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(!(sender instanceof Player)){
-            Chat.consoleError(plugin.error_prefix +
+            Chat.consoleMsg(plugin.error_prefix +
                     plugin.lang.getString("error-player-command"));
             return false;
         }

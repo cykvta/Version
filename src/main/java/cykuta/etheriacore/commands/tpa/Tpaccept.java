@@ -19,12 +19,12 @@ public class Tpaccept implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(!(sender instanceof Player)){
-            Chat.consoleError(plugin.error_prefix + plugin.lang.getString("error-player-command"));
+            Chat.consoleMsg(plugin.error_prefix + plugin.lang.getString("error-player-command"));
             return false;
         }
         Player player = (Player) sender;
         if (!TpaRequest.hasRequest(player)){
-            Chat.consoleError(plugin.error_prefix + plugin.lang.getString("error-no-request"));
+            Chat.consoleMsg(plugin.error_prefix + plugin.lang.getString("error-no-request"));
             return false;
         }
 

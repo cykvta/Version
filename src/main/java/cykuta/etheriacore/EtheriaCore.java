@@ -17,7 +17,7 @@ public final class EtheriaCore extends JavaPlugin {
     @Override
     public void onEnable() {
         if (version.checkUpdates(this.getDescription().getVersion())){
-            VersionChecker.sendConsoleMessage();
+            version.sendConsoleMessage();
             VersionChecker.oldVersion = true;
         }
 

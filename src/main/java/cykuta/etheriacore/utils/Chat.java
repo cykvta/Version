@@ -13,7 +13,7 @@ public class Chat {
         player.sendMessage(Chat.color(msg));
     }
 
-    public static void consoleError(String msg){
+    public static void consoleMsg(String msg){
         Bukkit.getConsoleSender().sendMessage(Chat.color(msg));
     }
 }
