@@ -14,3 +14,7 @@ lang:
   teleport-accepted: '&6%player% &7acepto tu peticion de teletransporte.'
   teleport-reject: '&6%player% &7Rechazo tu solicitud de teletransporte.'
   teleport-rejected: 'La peticion para teletransportarse a &6%player% &7fue rechazada.'
+config:
+  teleport-expire: 30
+  join-msg-replace:
+  join-quit-replace: "none"

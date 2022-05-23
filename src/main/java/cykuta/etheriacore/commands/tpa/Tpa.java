@@ -26,7 +26,7 @@ public class Tpa implements CommandExecutor {
         Player player = (Player) sender;
         if(args.length != 1){
             Chat.playerMsg(player, plugin.error_prefix +
-                    plugin.lang.getString("error-usage").replaceAll("usage" ,usage));
+                    plugin.lang.getString("error-usage").replaceAll("%usage%" ,usage));
             return false;
         }
         Player target = Bukkit.getPlayer(args[0]);
@@ -42,16 +42,14 @@ public class Tpa implements CommandExecutor {
                     plugin.lang.getString("error-auto-target"));
             return false;
         }
+        TpaRequest.newRequest(plugin, player, target);
 
-        TpaRequest.newRequest(player, target);
         Chat.playerMsg(player, plugin.main_prefix +
                 plugin.lang.getString("teleport-send").replaceAll("%player%", target.getName()));
-
         Chat.playerMsg(target, plugin.main_prefix +
                 plugin.lang.getString("teleport-request").replaceAll("%player%", player.getName()));
         Chat.playerMsg(target, plugin.main_prefix +
                 plugin.lang.getString("teleport-actions").replaceAll("%player%", player.getName()));
-        new TpaTimer(player, target).runTaskLaterAsynchronously(plugin,120L);
         return true;
     }
 }

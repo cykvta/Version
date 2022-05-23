@@ -8,8 +8,8 @@ import cykuta.etheriacore.utils.VersionChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class EtheriaCore extends JavaPlugin {
-    ConfigManager cfg = new ConfigManager(this);
-    VersionChecker version = new VersionChecker(this);
+    public VersionChecker version = new VersionChecker(this);
+    public ConfigManager cfg = new ConfigManager(this);
     public LangManager lang = new LangManager(this);
     public String error_prefix = lang.getString("error-prefix");
     public String main_prefix = lang.getString("main-prefix");

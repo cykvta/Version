@@ -22,7 +22,7 @@ public class Tpdeny implements CommandExecutor {
 
         Player player = (Player) sender;
         if (!TpaRequest.hasRequest(player)){
-            Chat.consoleMsg(plugin.error_prefix + plugin.lang.getString("error-no-request"));
+            Chat.playerMsg(player, plugin.error_prefix + plugin.lang.getString("error-no-request"));
             return false;
         }
 

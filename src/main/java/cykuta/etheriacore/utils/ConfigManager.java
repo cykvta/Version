@@ -1,15 +1,18 @@
 package cykuta.etheriacore.utils;
 
 import cykuta.etheriacore.EtheriaCore;
+import org.bukkit.configuration.file.FileConfiguration;
 
 import java.io.File;
-import java.util.List;
 
 public class ConfigManager {
     private final EtheriaCore plugin;
     public String cfgRoute;
+    final private FileConfiguration cfg;
+    final private String path = "config.";
 
     public ConfigManager(final EtheriaCore plugin){
+        this.cfg = plugin.getConfig();
         this.plugin = plugin;
     }
 
@@ -30,7 +33,11 @@ public class ConfigManager {
         return plugin.getConfig().getString("version_url");
     }
 
-    public List<String> getBannedItems(){
-        return plugin.getConfig().getStringList("banitem");
+    public String getString(String new_path){
+        return cfg.getString(path + new_path);
+    }
+
+    public int getInt(String new_path){
+        return cfg.getInt(path + new_path);
     }
 }

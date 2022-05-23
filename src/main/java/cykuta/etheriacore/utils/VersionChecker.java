@@ -1,8 +1,6 @@
 package cykuta.etheriacore.utils;
 
 import cykuta.etheriacore.EtheriaCore;
-import org.bukkit.Bukkit;
-import org.bukkit.command.ConsoleCommandSender;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -6,7 +6,13 @@ authors: [ Cykuta ]
 commands:
   tpa:
     description: Teleport to other user
+    permission: core.tp
+    aliases: [teleport]
   tpaccept:
     description: Accept teleport to other user
+    permission: core.tp
+    aliases: [aceptar, accept]
   tpdeny:
     description: Deny teleport to other user
+    permission: core.tp
+    aliases: [denegar, deny]
