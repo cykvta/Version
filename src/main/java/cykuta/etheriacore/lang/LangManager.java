@@ -13,7 +13,7 @@ public class LangManager {
         this.cfg = plugin.getConfig();
     }
 
-    public String getString(String path){
-        return cfg.getString(path + path);
+    public String getString(String new_path){
+        return cfg.getString(path + new_path);
     }
 }

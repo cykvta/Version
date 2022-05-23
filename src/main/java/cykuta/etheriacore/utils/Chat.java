@@ -14,6 +14,6 @@ public class Chat {
     }
 
     public static void consoleError(String msg){
-        Bukkit.getConsoleSender().sendMessage(Chat.color("&4[Error] &c" + msg));
+        Bukkit.getConsoleSender().sendMessage(Chat.color(msg));
     }
 }

@@ -21,24 +21,28 @@ public class Tpa implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(!(sender instanceof Player)){
-            Chat.consoleError(plugin.error_prefix + plugin.lang.getString("error-player-command"));
+            Chat.consoleError(plugin.error_prefix +
+                    plugin.lang.getString("error-player-command"));
             return false;
         }
         Player player = (Player) sender;
 
         if(args.length != 1){
-            Chat.playerMsg(player, plugin.error_prefix + plugin.lang.getString("error-usage").format(usage));
+            Chat.playerMsg(player, plugin.error_prefix +
+                    plugin.lang.getString("error-usage").format(usage));
             return false;
         }
         Player target = Bukkit.getPlayer(args[0]);
 
         if (target == null){
-            Chat.playerMsg(player, plugin.error_prefix + plugin.lang.getString("error-no-player"));
+            Chat.playerMsg(player, plugin.error_prefix +
+                    plugin.lang.getString("error-no-player"));
             return false;
         }
 
         if (target == player){
-            Chat.playerMsg(player, plugin.error_prefix + plugin.lang.getString("error-auto-target"));
+            Chat.playerMsg(player, plugin.error_prefix +
+                    plugin.lang.getString("error-auto-target"));
             return false;
         }
 
