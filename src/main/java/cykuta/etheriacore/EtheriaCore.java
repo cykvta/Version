@@ -11,8 +11,6 @@ public final class EtheriaCore extends JavaPlugin {
     public VersionChecker version = new VersionChecker(this);
     public ConfigManager cfg = new ConfigManager(this);
     public LangManager lang = new LangManager(this);
-    public String error_prefix = lang.getString("error-prefix");
-    public String main_prefix = lang.getString("main-prefix");
 
     @Override
     public void onEnable() {

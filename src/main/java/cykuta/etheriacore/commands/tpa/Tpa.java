@@ -1,7 +1,8 @@
 package cykuta.etheriacore.commands.tpa;
 
-import cykuta.etheriacore.commands.tpa.task.TpaTimer;
 import cykuta.etheriacore.EtheriaCore;
+import cykuta.etheriacore.lang.LangError;
+import cykuta.etheriacore.lang.LangSuccess;
 import cykuta.etheriacore.utils.Chat;
 import cykuta.etheriacore.utils.CommandUtils;
 import org.bukkit.Bukkit;
@@ -21,35 +22,29 @@ public class Tpa implements CommandExecutor {
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(!CommandUtils.isPlayer(plugin, sender)) return false;
+        if(!CommandUtils.isPlayer(sender)) return false;
 
         Player player = (Player) sender;
         if(args.length != 1){
-            Chat.playerMsg(player, plugin.error_prefix +
-                    plugin.lang.getString("error-usage").replaceAll("%usage%" ,usage));
+            Chat.playerMsg(player, LangError.USAGE.value.replaceAll("%usage%" ,usage));
             return false;
         }
         Player target = Bukkit.getPlayer(args[0]);
 
         if (target == null){
-            Chat.playerMsg(player, plugin.error_prefix +
-                    plugin.lang.getString("error-no-player"));
+            Chat.playerMsg(player, LangError.NO_PLAYER.value);
             return false;
         }
 
         if (target == player){
-            Chat.playerMsg(player, plugin.error_prefix +
-                    plugin.lang.getString("error-auto-target"));
+            Chat.playerMsg(player, LangError.AUTO_TARGET.value);
             return false;
         }
         TpaRequest.newRequest(plugin, player, target);
 
-        Chat.playerMsg(player, plugin.main_prefix +
-                plugin.lang.getString("teleport-send").replaceAll("%player%", target.getName()));
-        Chat.playerMsg(target, plugin.main_prefix +
-                plugin.lang.getString("teleport-request").replaceAll("%player%", player.getName()));
-        Chat.playerMsg(target, plugin.main_prefix +
-                plugin.lang.getString("teleport-actions").replaceAll("%player%", player.getName()));
+        Chat.playerMsg(player, LangSuccess.TELEPORT_SEND.value.replaceAll("%player%", target.getName()));
+        Chat.playerMsg(target, LangSuccess.TELEPORT_REQUEST.value.replaceAll("%player%", player.getName()));
+        Chat.playerMsg(target, LangSuccess.TELEPORT_ACTIONS.value.replaceAll("%player%", player.getName()));
         return true;
     }
 }

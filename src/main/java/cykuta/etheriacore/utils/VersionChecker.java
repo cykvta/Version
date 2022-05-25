@@ -43,7 +43,7 @@ public class VersionChecker {
             String r = getRequest(url);
             if (!r.equals(version)) return true;
         }catch (Exception e){
-            Chat.consoleMsg(plugin.error_prefix + "config: version_url error");
+            Chat.consoleMsg("&4[ERROR]: config: version_url error");
         }
         return false;
     }
@@ -51,7 +51,7 @@ public class VersionChecker {
     //Mensaje a la consola del server
     public void sendConsoleMessage(){
         Chat.consoleMsg("");
-        Chat.consoleMsg(plugin.main_prefix + "&aNew version available");
+        Chat.consoleMsg("&4[ERROR]: &aNew version available");
         Chat.consoleMsg("");
     }
 }
