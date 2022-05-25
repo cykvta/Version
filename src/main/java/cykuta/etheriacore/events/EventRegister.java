@@ -14,6 +14,6 @@ public class EventRegister {
 
     public void registerEvents(){
         pluginManager.registerEvents(new VersionOnJoin(plugin), plugin);
-        pluginManager.registerEvents(new JoinAnnounce(plugin), plugin);
+        pluginManager.registerEvents(new JoinAnnounce(), plugin);
     }
 }
