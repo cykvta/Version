@@ -30,8 +30,8 @@ public class Tpdeny implements CommandExecutor {
 
         Player tpSender = TpaRequest.fetchPlayer(player);
         TpaRequest.removeRequest(player);
-        Chat.playerMsg(player, LangSuccess.TELEPORT_REJECT.value.replaceAll("%player%", player.getName()));
-        Chat.playerMsg(tpSender, LangSuccess.TELEPORT_REJECTED.value.replaceAll("%player%", tpSender.getName()));
+        Chat.playerMsg(player, LangSuccess.TELEPORT_REJECT.value.replaceAll("%player%", tpSender.getName()));
+        Chat.playerMsg(tpSender, LangSuccess.TELEPORT_REJECTED.value.replaceAll("%player%", player.getName()));
         return false;
     }
 }

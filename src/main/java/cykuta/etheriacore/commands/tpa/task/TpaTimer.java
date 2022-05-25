@@ -22,7 +22,7 @@ public class TpaTimer extends BukkitRunnable {
     public void run() {
         if(TpaRequest.hasRequest(target)){
             TpaRequest.removeRequest(target);
-            Chat.playerMsg(sender, LangSuccess.TELEPORT_EXPIRED.value);
+            Chat.playerMsg(sender, LangSuccess.TELEPORT_EXPIRED.value.replaceAll("%player%", sender.getName()));
         }
     }
 }

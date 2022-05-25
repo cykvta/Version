@@ -12,8 +12,8 @@ lang:
   teleport-actions: 'Para responder usa: &a/aceptar &7o &c/denegar'
   teleport-accept: 'Aceptaste la peticion de teletransporte de &6%player%&7.'
   teleport-accepted: '&6%player% &7acepto tu peticion de teletransporte.'
-  teleport-reject: '&6%player% &7Rechazo tu solicitud de teletransporte.'
-  teleport-rejected: 'La peticion para teletransportarse a &6%player% &7fue rechazada.'
+  teleport-reject: 'La peticion para teletransportarse a &6%player% &7fue rechazada.'
+  teleport-rejected: '&6%player% &7Rechazo tu solicitud de teletransporte.'
   teleport-expired: 'La peticion de teletransporte a &6%player% &7expiro.'
 config:
   teleport-expire: 30
