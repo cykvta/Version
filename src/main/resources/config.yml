@@ -18,4 +18,4 @@ lang:
 config:
   teleport-expire: 30
   join-msg-replace: "none"
-  join-quit-replace: "none"
+  quit-msg-replace: "none"
