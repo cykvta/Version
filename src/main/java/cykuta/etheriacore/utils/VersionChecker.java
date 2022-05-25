@@ -1,6 +1,7 @@
 package cykuta.etheriacore.utils;
 
 import cykuta.etheriacore.EtheriaCore;
+import cykuta.etheriacore.config.ConfigManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;

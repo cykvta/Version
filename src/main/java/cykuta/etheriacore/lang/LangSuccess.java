@@ -11,8 +11,8 @@ public enum LangSuccess {
     TELEPORT_EXPIRED("teleport-expired");
 
     public final String value;
-    LangSuccess(String value) {
+    LangSuccess(String path) {
         String prefix = LangManager.getString("main-prefix");
-        this.value = prefix + LangManager.getString(value);
+        this.value = prefix + LangManager.getString(path);
     }
 }

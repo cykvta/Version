@@ -1,7 +1,9 @@
-package cykuta.etheriacore.utils;
+package cykuta.etheriacore.config;
 
 import cykuta.etheriacore.EtheriaCore;
+import cykuta.etheriacore.utils.Chat;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
@@ -9,7 +11,7 @@ public class ConfigManager {
     private final EtheriaCore plugin;
     public String cfgRoute;
     final private FileConfiguration cfg;
-    final private String path = "config.";
+    final static private String path = "config.";
 
     public ConfigManager(final EtheriaCore plugin){
         this.cfg = plugin.getConfig();
@@ -25,7 +27,7 @@ public class ConfigManager {
         }
     }
 
-    public long secondToTicks(int sec){
+    public static long secondToTicks(int sec){
         return sec * 20L;
     };
 
@@ -33,11 +35,12 @@ public class ConfigManager {
         return plugin.getConfig().getString("version_url");
     }
 
-    public String getString(String new_path){
-        return cfg.getString(path + new_path);
+    public static String getString(String new_path){
+        String str = JavaPlugin.getProvidingPlugin(EtheriaCore.class).getConfig().getString(path + new_path);
+        return Chat.color(str);
     }
 
-    public int getInt(String new_path){
-        return cfg.getInt(path + new_path);
+    public static int getInt(String new_path){
+        return JavaPlugin.getProvidingPlugin(EtheriaCore.class).getConfig().getInt(path + new_path);
     }
 }

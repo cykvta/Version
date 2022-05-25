@@ -7,9 +7,9 @@ public enum LangError {
     TELEPORT_NO_REQUEST("error-no-request"),
     PLAYER_COMMAND("error-player-command");
 
-    public String value;
-    LangError(String value) {
+    public final String value;
+    LangError(String path) {
         String prefix = LangManager.getString("error-prefix");
-        this.value = prefix + LangManager.getString(value);
+        this.value = prefix + LangManager.getString(path);
     }
 }

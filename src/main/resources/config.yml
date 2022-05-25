@@ -17,5 +17,5 @@ lang:
   teleport-expired: 'La peticion de teletransporte a &6%player% &7expiro.'
 config:
   teleport-expire: 30
-  join-msg-replace: "none"
-  quit-msg-replace: "none"
+  join-msg: "none"
+  quit-msg: "none"
