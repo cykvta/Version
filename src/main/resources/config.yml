@@ -15,6 +15,8 @@ lang:
   teleport-reject: 'La peticion para teletransportarse a &6%player% &7fue rechazada.'
   teleport-rejected: '&6%player% &7Rechazo tu solicitud de teletransporte.'
   teleport-expired: 'La peticion de teletransporte a &6%player% &7expiro.'
+  gamemode-change: 'Tu modo de juego ahora es %gamemode%'
+  gamemode-change-other: 'Cambiaste el modo de juego de %player% a %gamemode%'
 config:
   teleport-expire: 30
   join-msg: "none"

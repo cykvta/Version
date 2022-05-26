@@ -8,7 +8,9 @@ public enum LangSuccess {
     TELEPORT_ACCEPTED("teleport-accepted"),
     TELEPORT_REJECT("teleport-reject"),
     TELEPORT_REJECTED("teleport-rejected"),
-    TELEPORT_EXPIRED("teleport-expired");
+    TELEPORT_EXPIRED("teleport-expired"),
+    GAMEMODE("gamemode-change"),
+    GAMEMODE_OTHER("gamemode-change-other");
 
     public final String value;
     LangSuccess(String path) {

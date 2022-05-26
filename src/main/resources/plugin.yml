@@ -5,7 +5,7 @@ api-version: 1.18
 authors: [ Cykuta ]
 commands:
   tpa:
-    description: Make a teleport request to someone user
+    description: Send a teleport request to someone user
     permission: core.tp
     aliases: [teleport]
   tpaccept:
@@ -16,3 +16,19 @@ commands:
     description: Deny a pending teleport request
     permission: core.tp
     aliases: [denegar, deny]
+  creative:
+    description: Changue your gamemode
+    permission: core.gamemode.creative
+    aliases: [gmc]
+  survival:
+    description: Changue your gamemode
+    permission: core.gamemode.survival
+    aliases: [gms]
+  adventure:
+    description: Changue your gamemode
+    permission: core.gamemode.adventure
+    aliases: [gma]
+  spetator:
+    description: Changue your gamemode
+    permission: core.gamemode.spectator
+    aliases: [gmsp]

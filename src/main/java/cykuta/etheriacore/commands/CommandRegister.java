@@ -1,9 +1,11 @@
 package cykuta.etheriacore.commands;
 
+import cykuta.etheriacore.commands.shortcuts.GamemodeChanger;
 import cykuta.etheriacore.commands.tpa.Tpa;
 import cykuta.etheriacore.commands.tpa.Tpaccept;
 import cykuta.etheriacore.commands.tpa.Tpdeny;
 import cykuta.etheriacore.EtheriaCore;
+import org.bukkit.GameMode;
 
 public class CommandRegister {
     private final EtheriaCore plugin;
@@ -16,5 +18,10 @@ public class CommandRegister {
         plugin.getCommand("tpa").setExecutor(new Tpa(plugin));
         plugin.getCommand("tpaccept").setExecutor(new Tpaccept(plugin));
         plugin.getCommand("tpdeny").setExecutor(new Tpdeny(plugin));
+
+        plugin.getCommand("creative").setExecutor(new GamemodeChanger(GameMode.CREATIVE));
+        plugin.getCommand("survival").setExecutor(new GamemodeChanger(GameMode.SURVIVAL));
+        plugin.getCommand("adventure").setExecutor(new GamemodeChanger(GameMode.ADVENTURE));
+        plugin.getCommand("spectator").setExecutor(new GamemodeChanger(GameMode.SPECTATOR));
     }
 }
