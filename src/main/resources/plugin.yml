@@ -5,14 +5,14 @@ api-version: 1.18
 authors: [ Cykuta ]
 commands:
   tpa:
-    description: Teleport to other user
+    description: Make a teleport request to someone user
     permission: core.tp
     aliases: [teleport]
   tpaccept:
-    description: Accept teleport to other user
+    description: Accepts a pending teleport request
     permission: core.tp
     aliases: [aceptar, accept]
   tpdeny:
-    description: Deny teleport to other user
+    description: Deny a pending teleport request
     permission: core.tp
     aliases: [denegar, deny]
