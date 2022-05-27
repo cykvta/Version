@@ -4,6 +4,7 @@ import cykuta.etheriacore.commands.CommandRegister;
 import cykuta.etheriacore.events.EventRegister;
 import cykuta.etheriacore.config.ConfigManager;
 import cykuta.etheriacore.utils.VersionChecker;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class EtheriaCore extends JavaPlugin {

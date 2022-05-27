@@ -7,7 +7,6 @@ commands:
   tpa:
     description: Send a teleport request to someone user
     permission: core.tp
-    usage: "/tpa <player>"
     aliases: [teleport]
   tpaccept:
     description: Accepts a pending teleport request
@@ -35,11 +34,21 @@ commands:
     aliases: [gmsp]
   day:
     description: Change time to day
-    permission: core.gamemode.spectator
-    usage: "/day <world>"
+    permission: core.time
     aliases: [dia]
   night:
     description: Change time to night
-    permission: core.gamemode.spectator
-    usage: "/night <world>"
+    permission: core.time
     aliases: [noche]
+  sun:
+    description: Change weather to sun
+    permission: core.weather
+    aliases: [soleado]
+  rain:
+    description: Change weather to rain
+    permission: core.weather
+    aliases: [lluvia]
+  thunder:
+    description: Change weather to thunder
+    permission: core.weather
+    aliases: [tormenta, w]

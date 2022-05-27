@@ -7,17 +7,19 @@ lang:
   error-no-player: 'El jugador no esta conectado.'
   error-auto-target: 'No puedes te puedes enviar una peticion de teletransporte a ti mismo.'
   error-no-request: 'No tienes peticiones pendientes.'
-  teleport-send: 'Realizaste una peticion de teletrasporte a &6%player% &7.'
+  error-weather-world: 'No se encuentra el mundo %world%'
+  teleport-send: 'Realizaste una peticion de teletrasporte a &6%player%.'
   teleport-request: 'El usuario &6%player% &7quiere teletrasnportarse contigo.'
   teleport-actions: 'Para responder usa: &a/aceptar &7o &c/denegar'
-  teleport-accept: 'Aceptaste la peticion de teletransporte de &6%player%&7.'
+  teleport-accept: 'Aceptaste la peticion de teletransporte de &6%player%.'
   teleport-accepted: '&6%player% &7acepto tu peticion de teletransporte.'
   teleport-reject: 'La peticion para teletransportarse a &6%player% &7fue rechazada.'
   teleport-rejected: '&6%player% &7Rechazo tu solicitud de teletransporte.'
   teleport-expired: 'La peticion de teletransporte a &6%player% &7expiro.'
   gamemode-change: 'Tu modo de juego ahora es %gamemode%'
   gamemode-change-other: 'Cambiaste el modo de juego de %player% a %gamemode%'
-  time-set: 'La hora en el mundo %world% fue cambiada a %time%'
+  time-set: 'La hora en el mundo &6%world% &7fue cambiada a &6%time%'
+  weather-set: 'El clima en el mundo &6%world% &7fue cambiada a &6%weather%'
 config:
   teleport-expire: 30
   join-msg: "none"

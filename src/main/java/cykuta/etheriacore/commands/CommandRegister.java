@@ -2,6 +2,8 @@ package cykuta.etheriacore.commands;
 
 import cykuta.etheriacore.commands.shortcuts.gamemode.GamemodeChanger;
 import cykuta.etheriacore.commands.shortcuts.time.TimeChanger;
+import cykuta.etheriacore.commands.shortcuts.time.WeatherTypes;
+import cykuta.etheriacore.commands.shortcuts.time.WeatherChanger;
 import cykuta.etheriacore.commands.tpa.Tpa;
 import cykuta.etheriacore.commands.tpa.Tpaccept;
 import cykuta.etheriacore.commands.tpa.Tpdeny;
@@ -27,5 +29,10 @@ public class CommandRegister {
 
         plugin.getCommand("day").setExecutor(new TimeChanger(0));
         plugin.getCommand("night").setExecutor(new TimeChanger(18000));
+
+
+        plugin.getCommand("sun").setExecutor(new WeatherChanger(WeatherTypes.SUN));
+        plugin.getCommand("rain").setExecutor(new WeatherChanger(WeatherTypes.RAIN));
+        plugin.getCommand("thunder").setExecutor(new WeatherChanger(WeatherTypes.THUNDER));
     }
 }

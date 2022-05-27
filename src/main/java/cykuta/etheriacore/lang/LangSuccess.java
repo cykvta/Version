@@ -11,7 +11,8 @@ public enum LangSuccess {
     TELEPORT_EXPIRED("teleport-expired"),
     GAMEMODE("gamemode-change"),
     GAMEMODE_OTHER("gamemode-change-other"),
-    TIME_SET("time-set");
+    TIME_SET("time-set"),
+    WEATHER_SET("weather-set");
 
     public final String value;
     LangSuccess(String path) {

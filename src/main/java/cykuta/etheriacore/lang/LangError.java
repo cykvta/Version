@@ -5,7 +5,8 @@ public enum LangError {
     NO_PLAYER("error-no-player"),
     AUTO_TARGET("error-auto-target"),
     TELEPORT_NO_REQUEST("error-no-request"),
-    PLAYER_COMMAND("error-player-command");
+    PLAYER_COMMAND("error-player-command"),
+    WEATHER_WORLD("error-weather-world");
 
     public final String value;
     LangError(String path) {
