@@ -7,6 +7,7 @@ commands:
   tpa:
     description: Send a teleport request to someone user
     permission: core.tp
+    usage: "/tpa <player>"
     aliases: [teleport]
   tpaccept:
     description: Accepts a pending teleport request
@@ -17,18 +18,28 @@ commands:
     permission: core.tp
     aliases: [denegar, deny]
   creative:
-    description: Changue your gamemode
+    description: Change your gamemode
     permission: core.gamemode.creative
     aliases: [gmc]
   survival:
-    description: Changue your gamemode
+    description: Change your gamemode
     permission: core.gamemode.survival
     aliases: [gms]
   adventure:
-    description: Changue your gamemode
+    description: Change your gamemode
     permission: core.gamemode.adventure
     aliases: [gma]
-  spetator:
-    description: Changue your gamemode
+  spectator:
+    description: Change your gamemode
     permission: core.gamemode.spectator
     aliases: [gmsp]
+  day:
+    description: Change time to day
+    permission: core.gamemode.spectator
+    usage: "/day <world>"
+    aliases: [dia]
+  night:
+    description: Change time to night
+    permission: core.gamemode.spectator
+    usage: "/night <world>"
+    aliases: [noche]

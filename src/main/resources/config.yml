@@ -17,6 +17,7 @@ lang:
   teleport-expired: 'La peticion de teletransporte a &6%player% &7expiro.'
   gamemode-change: 'Tu modo de juego ahora es %gamemode%'
   gamemode-change-other: 'Cambiaste el modo de juego de %player% a %gamemode%'
+  time-set: 'La hora en el mundo %world% fue cambiada a %time%'
 config:
   teleport-expire: 30
   join-msg: "none"

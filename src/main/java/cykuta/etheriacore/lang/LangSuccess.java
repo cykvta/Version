@@ -10,7 +10,8 @@ public enum LangSuccess {
     TELEPORT_REJECTED("teleport-rejected"),
     TELEPORT_EXPIRED("teleport-expired"),
     GAMEMODE("gamemode-change"),
-    GAMEMODE_OTHER("gamemode-change-other");
+    GAMEMODE_OTHER("gamemode-change-other"),
+    TIME_SET("time-set");
 
     public final String value;
     LangSuccess(String path) {

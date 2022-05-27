@@ -1,4 +1,4 @@
-package cykuta.etheriacore.commands.shortcuts;
+package cykuta.etheriacore.commands.shortcuts.gamemode;
 
 import cykuta.etheriacore.lang.LangError;
 import cykuta.etheriacore.lang.LangSuccess;

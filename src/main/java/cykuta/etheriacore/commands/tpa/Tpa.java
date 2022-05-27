@@ -14,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class Tpa implements CommandExecutor {
     private final EtheriaCore plugin;
-    private final String usage = "/tpa <player>";
 
     public Tpa(EtheriaCore plugin){
         this.plugin = plugin;
@@ -26,7 +25,7 @@ public class Tpa implements CommandExecutor {
 
         Player player = (Player) sender;
         if(args.length != 1){
-            Chat.playerMsg(player, LangError.USAGE.value.replaceAll("%usage%" ,usage));
+            Chat.playerMsg(player, LangError.USAGE.value.replaceAll("%usage%" ,command.getUsage()));
             return false;
         }
         Player target = Bukkit.getPlayer(args[0]);

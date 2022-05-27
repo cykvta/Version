@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class Tpdeny implements CommandExecutor {
     private final EtheriaCore plugin;
-    private final String usage = "/tpdeny";
 
     public Tpdeny(EtheriaCore plugin){
         this.plugin = plugin;

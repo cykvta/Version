@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class Tpaccept implements CommandExecutor {
     private final EtheriaCore plugin;
-    private final String usage = "/tpaccept";
 
     public Tpaccept(EtheriaCore plugin){
         this.plugin = plugin;

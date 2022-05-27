@@ -1,6 +1,7 @@
 package cykuta.etheriacore.commands;
 
-import cykuta.etheriacore.commands.shortcuts.GamemodeChanger;
+import cykuta.etheriacore.commands.shortcuts.gamemode.GamemodeChanger;
+import cykuta.etheriacore.commands.shortcuts.time.TimeChanger;
 import cykuta.etheriacore.commands.tpa.Tpa;
 import cykuta.etheriacore.commands.tpa.Tpaccept;
 import cykuta.etheriacore.commands.tpa.Tpdeny;
@@ -23,5 +24,8 @@ public class CommandRegister {
         plugin.getCommand("survival").setExecutor(new GamemodeChanger(GameMode.SURVIVAL));
         plugin.getCommand("adventure").setExecutor(new GamemodeChanger(GameMode.ADVENTURE));
         plugin.getCommand("spectator").setExecutor(new GamemodeChanger(GameMode.SPECTATOR));
+
+        plugin.getCommand("day").setExecutor(new TimeChanger(0));
+        plugin.getCommand("night").setExecutor(new TimeChanger(18000));
     }
 }
