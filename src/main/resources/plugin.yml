@@ -51,4 +51,4 @@ commands:
   thunder:
     description: Change weather to thunder
     permission: core.weather
-    aliases: [tormenta, w]
+    aliases: [tormenta, storm]
