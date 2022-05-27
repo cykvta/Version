@@ -39,7 +39,7 @@ public class TimeChanger implements CommandExecutor {
         player.getWorld().setTime(time);
         World world = player.getWorld();
 
-        Chat.consoleMsg(LangSuccess.TIME_SET.value
+        Chat.playerMsg(player, LangSuccess.TIME_SET.value
                 .replaceAll("%world%", world.getName())
                 .replaceAll("%time%", String.valueOf(time)));
         return true;
