@@ -12,7 +12,10 @@ public enum LangSuccess {
     GAMEMODE("gamemode-change"),
     GAMEMODE_OTHER("gamemode-change-other"),
     TIME_SET("time-set"),
-    WEATHER_SET("weather-set");
+    WEATHER_SET("weather-set"),
+    NEW_HOME("home-new"),
+    REMOVE_HOME("home-removed"),
+    TELEPORT_HOME("home-teleport");
 
     public final String value;
     LangSuccess(String path) {

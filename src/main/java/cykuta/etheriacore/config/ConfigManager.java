@@ -40,6 +40,10 @@ public class ConfigManager {
         return Chat.color(str);
     }
 
+    public static String getPureString(String new_path){
+        return JavaPlugin.getProvidingPlugin(EtheriaCore.class).getConfig().getString(path + new_path);
+    }
+
     public static int getInt(String new_path){
         return JavaPlugin.getProvidingPlugin(EtheriaCore.class).getConfig().getInt(path + new_path);
     }

@@ -6,7 +6,12 @@ public enum LangError {
     AUTO_TARGET("error-auto-target"),
     TELEPORT_NO_REQUEST("error-no-request"),
     PLAYER_COMMAND("error-player-command"),
-    WEATHER_WORLD("error-weather-world");
+    WEATHER_WORLD("error-weather-world"),
+    DATABASE("error-database"),
+    DATABASE_DISABLED("error-database-disabled"),
+    NO_HOMES("error-no-homes"),
+    MAX_HOMES("error-max-homes"),
+    HOME_LOCATION("error-home-location");
 
     public final String value;
     LangError(String path) {

@@ -52,3 +52,15 @@ commands:
     description: Change weather to thunder
     permission: core.weather
     aliases: [tormenta, storm]
+  sethome:
+    description: Set your home here
+    permission: core.home
+    aliases: []
+  home:
+    description: Go to your home here
+    permission: core.home
+    aliases: []
+  delhome:
+    description: Remove your home
+    permission: core.home
+    aliases: []

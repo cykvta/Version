@@ -13,4 +13,12 @@ public class CommandUtils {
         }
         return true;
     }
+
+    public static boolean isDatabaseEnabled(Player player){
+        if(EtheriaCore.conn == null){
+            Chat.playerMsg(player, LangError.DATABASE_DISABLED.value);
+            return false;
+        }
+        return true;
+    }
 }

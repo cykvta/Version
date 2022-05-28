@@ -1,5 +1,8 @@
 package cykuta.etheriacore.commands;
 
+import cykuta.etheriacore.commands.home.DelHome;
+import cykuta.etheriacore.commands.home.Home;
+import cykuta.etheriacore.commands.home.SetHome;
 import cykuta.etheriacore.commands.shortcuts.gamemode.GamemodeChanger;
 import cykuta.etheriacore.commands.shortcuts.time.TimeChanger;
 import cykuta.etheriacore.commands.shortcuts.time.WeatherTypes;
@@ -34,5 +37,9 @@ public class CommandRegister {
         plugin.getCommand("sun").setExecutor(new WeatherChanger(WeatherTypes.SUN));
         plugin.getCommand("rain").setExecutor(new WeatherChanger(WeatherTypes.RAIN));
         plugin.getCommand("thunder").setExecutor(new WeatherChanger(WeatherTypes.THUNDER));
+
+        plugin.getCommand("sethome").setExecutor(new SetHome());
+        plugin.getCommand("delhome").setExecutor(new DelHome());
+        plugin.getCommand("home").setExecutor(new Home());
     }
 }

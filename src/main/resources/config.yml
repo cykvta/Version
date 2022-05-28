@@ -8,6 +8,10 @@ lang:
   error-auto-target: 'No puedes te puedes enviar una peticion de teletransporte a ti mismo.'
   error-no-request: 'No tienes peticiones pendientes.'
   error-weather-world: 'No se encuentra el mundo %world%'
+  error-database: 'Hay un error en la base de datos.'
+  error-database-disabled: 'Este comando requiere la activacion de una base de datos, contacta a un administrador.'
+  error-max-homes: 'Ya tienes la cantidad maxima de hogares.'
+  error-no-homes: 'No tienes hogares disponibles.'
   teleport-send: 'Realizaste una peticion de teletrasporte a &6%player%.'
   teleport-request: 'El usuario &6%player% &7quiere teletrasnportarse contigo.'
   teleport-actions: 'Para responder usa: &a/aceptar &7o &c/denegar'
@@ -20,7 +24,17 @@ lang:
   gamemode-change-other: 'Cambiaste el modo de juego de %player% a %gamemode%'
   time-set: 'La hora en el mundo &6%world% &7fue cambiada a &6%time%'
   weather-set: 'El clima en el mundo &6%world% &7fue cambiada a &6%weather%'
+  home-new: 'Estableciste un nuevo hogar.'
+  home-removed: 'Tu hogar fue eliminado correctamente.'
+  home-teleport: 'Te teletransportaste correctamente a tu hogar.'
+  error-home-location: 'Hay un error con los datos de tu hogar, contacta a un administrador.'
 config:
+  database:
+    ip: ""
+    port: ""
+    user: ""
+    password: ""
+    database: ""
   teleport-expire: 30
   join-msg: "none"
   quit-msg: "none"
