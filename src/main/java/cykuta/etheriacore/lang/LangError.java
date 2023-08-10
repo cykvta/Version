@@ -1,5 +1,7 @@
 package cykuta.etheriacore.lang;
 
+import cykuta.etheriacore.EtheriaCore;
+
 public enum LangError {
     USAGE("error-usage"),
     NO_PLAYER("error-no-player"),
@@ -15,7 +17,7 @@ public enum LangError {
 
     public final String value;
     LangError(String path) {
-        String prefix = LangManager.getString("error-prefix");
-        this.value = prefix + LangManager.getString(path);
+        String prefix = EtheriaCore.getLangManager().getString("error-prefix");
+        this.value = prefix + EtheriaCore.getLangManager().getString(path);
     }
 }

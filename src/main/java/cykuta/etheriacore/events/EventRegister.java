@@ -1,6 +1,7 @@
 package cykuta.etheriacore.events;
 
 import cykuta.etheriacore.EtheriaCore;
+import cykuta.etheriacore.events.listeners.JoinAnnounce;
 import org.bukkit.plugin.PluginManager;
 
 public class EventRegister {
@@ -12,8 +13,8 @@ public class EventRegister {
         this.plugin = plugin;
     }
 
+    // Register events
     public void registerEvents(){
-        pluginManager.registerEvents(new VersionOnJoin(plugin), plugin);
-        pluginManager.registerEvents(new JoinAnnounce(), plugin);
+        pluginManager.registerEvents(new JoinAnnounce(plugin), plugin);
     }
 }

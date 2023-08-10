@@ -4,37 +4,47 @@ import cykuta.etheriacore.commands.CommandRegister;
 import cykuta.etheriacore.database.Conn;
 import cykuta.etheriacore.events.EventRegister;
 import cykuta.etheriacore.config.ConfigManager;
-import cykuta.etheriacore.lang.LangError;
+import cykuta.etheriacore.lang.LangManager;
 import cykuta.etheriacore.utils.Chat;
-import cykuta.etheriacore.utils.VersionChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.sql.SQLException;
-
 public final class EtheriaCore extends JavaPlugin {
-    public VersionChecker version = new VersionChecker(this);
-    public ConfigManager cfg = new ConfigManager(this);
+    public static ConfigManager cfg;
+    public static LangManager lang;
     public static Conn conn = null;
 
     @Override
     public void onEnable() {
-        if (version.checkUpdates(this.getDescription().getVersion())){
-            version.sendConsoleMessage();
-            VersionChecker.oldVersion = true;
-        }
+        // Load config lang and db
+        loadFiles();
 
+        // Event register
         EventRegister events = new EventRegister(getServer().getPluginManager(), this);
-        events.registerEvents(); //Registro de eventos
+        events.registerEvents();
 
+        // Command register
         CommandRegister cmd = new CommandRegister(this);
+        cmd.registerCommands();
+    }
 
-        cmd.registerCommands(); //Registro de comandos
-        cfg.registerConfig(); //Guarda la config por defecto
-
+    public void loadFiles() {
         try {
-            conn = new Conn(); // Conecta la db
-        }catch (SQLException e){
-            Chat.consoleMsg(LangError.DATABASE.value + e.getMessage());
+            cfg = new ConfigManager(this);
+            lang = new LangManager(this);
+            conn = new Conn(); // Connect to database
+
+
+        } catch (Exception e){
+            Chat.consoleMsg("&4ERROR ON FILES: &e" + e.getMessage());
+            getServer().getPluginManager().disablePlugin(this);
         }
+    }
+
+    public static ConfigManager getConfigManager(){
+        return cfg;
+    }
+
+    public static LangManager getLangManager(){
+        return lang;
     }
 }

@@ -10,7 +10,7 @@ public class Conn {
     private Connection connection;
 
     public Conn() throws SQLException {
-        if (ConfigManager.getBoolean("use-mysql")) useMysql();
+        if (Config.USE_MYSQL.getBoolean()) useMysql();
         else useSqlite();
 
         // Create tables
@@ -19,11 +19,11 @@ public class Conn {
 
     // Mysql Connection
     private void useMysql() throws SQLException {
-        String ip = Config.DATABASE_IP.getPureString();
-        String port = Config.DATABASE_PORT.getPureString();
-        String user = Config.DATABASE_USER.getPureString();
-        String password = Config.DATABASE_PASSWORD.getPureString();
-        String database = Config.DATABASE_DATABASE.getPureString();
+        String ip = Config.DATABASE_IP.getString();
+        String port = Config.DATABASE_PORT.getString();
+        String user = Config.DATABASE_USER.getString();
+        String password = Config.DATABASE_PASSWORD.getString();
+        String database = Config.DATABASE_DATABASE.getString();
 
         String url = String.format("jdbc:mysql://%s:%s/%s", ip, port, database);
         this.connection = DriverManager.getConnection(url, user, password);

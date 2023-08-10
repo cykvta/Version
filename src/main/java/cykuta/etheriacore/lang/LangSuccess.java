@@ -1,5 +1,7 @@
 package cykuta.etheriacore.lang;
 
+import cykuta.etheriacore.EtheriaCore;
+
 public enum LangSuccess {
     TELEPORT_SEND("teleport-send"),
     TELEPORT_REQUEST("teleport-request"),
@@ -19,7 +21,7 @@ public enum LangSuccess {
 
     public final String value;
     LangSuccess(String path) {
-        String prefix = LangManager.getString("main-prefix");
-        this.value = prefix + LangManager.getString(path);
+        String prefix = EtheriaCore.getLangManager().getString("main-prefix");
+        this.value = prefix + EtheriaCore.getLangManager().getString(path);
     }
 }

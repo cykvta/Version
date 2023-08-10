@@ -1,5 +1,7 @@
 package cykuta.etheriacore.config;
 
+import cykuta.etheriacore.EtheriaCore;
+
 public enum Config {
     TELEPORT_EXPIRE("teleport-expire"),
     JOIN_MSG("join-msg"),
@@ -18,12 +20,12 @@ public enum Config {
         this.path = path;
     }
     public String getString(){
-        return ConfigManager.getString(path);
-    }
-    public String getPureString(){
-        return ConfigManager.getPureString(path);
+        return EtheriaCore.getConfigManager().getString(path);
     }
     public int getInt(){
-        return ConfigManager.getInt(path);
+        return EtheriaCore.getConfigManager().getInt(path);
+    }
+    public boolean getBoolean(){
+        return EtheriaCore.getConfigManager().getBoolean(path);
     }
 }

@@ -1,0 +1,33 @@
+# Prefixes
+main-prefix: '&6[CORE] &7'
+error-prefix: '&4[ERROR] &c'
+
+# Error messages
+error-player-command: 'Este comando solo funciona en jugadores.'
+error-usage: 'Error de sintaxis usa: %usage%'
+error-no-player: 'El jugador no esta conectado.'
+error-auto-target: 'No puedes te puedes enviar una peticion de teletransporte a ti mismo.'
+error-no-request: 'No tienes peticiones pendientes.'
+error-weather-world: 'No se encuentra el mundo %world%'
+error-database: 'Hay un error en la base de datos.'
+error-database-disabled: 'Este comando requiere la activacion de una base de datos, contacta a un administrador.'
+error-max-homes: 'Ya tienes la cantidad maxima de hogares.'
+error-no-homes: 'No tienes hogares disponibles.'
+error-home-location: 'Hay un error con los datos de tu hogar, contacta a un administrador.'
+
+# Success messages
+teleport-send: 'Realizaste una peticion de teletrasporte a &6%player%.'
+teleport-request: 'El usuario &6%player% &7quiere teletrasnportarse contigo.'
+teleport-actions: 'Para responder usa: &a/aceptar &7o &c/denegar'
+teleport-accept: 'Aceptaste la peticion de teletransporte de ansporte.'
+teleport-reject: 'La peticion para teletransportarse a &6%player% &7fue rechazada.'
+teleport-rejected: '&6%player% &7Rechazo tu solicit&6%player%.'
+teleport-accepted: '&6%player% &7acepto tu peticion de teletrud de teletransporte.'
+teleport-expired: 'La peticion de teletransporte a &6%player% &7expiro.'
+gamemode-change: 'Tu modo de juego ahora es %gamemode%'
+gamemode-change-other: 'Cambiaste el modo de juego de %player% a %gamemode%'
+time-set: 'La hora en el mundo &6%world% &7fue cambiada a &6%time%'
+weather-set: 'El clima en el mundo &6%world% &7fue cambiada a &6%weather%'
+home-new: 'Estableciste un nuevo hogar.'
+home-removed: 'Tu hogar fue eliminado correctamente.'
+home-teleport: 'Te teletransportaste correctamente a tu hogar.'
