@@ -47,4 +47,7 @@ public class ConfigManager {
     public static int getInt(String new_path){
         return JavaPlugin.getProvidingPlugin(EtheriaCore.class).getConfig().getInt(path + new_path);
     }
+    public static boolean getBoolean(String new_path){
+        return JavaPlugin.getProvidingPlugin(EtheriaCore.class).getConfig().getBoolean(path + new_path);
+    }
 }

@@ -27,14 +27,14 @@ public final class EtheriaCore extends JavaPlugin {
         events.registerEvents(); //Registro de eventos
 
         CommandRegister cmd = new CommandRegister(this);
-        cmd.registerCommands(); //Registro de comandos
 
+        cmd.registerCommands(); //Registro de comandos
         cfg.registerConfig(); //Guarda la config por defecto
 
         try {
             conn = new Conn(); // Conecta la db
         }catch (SQLException e){
-            Chat.consoleMsg(LangError.DATABASE.value);
+            Chat.consoleMsg(LangError.DATABASE.value + e.getMessage());
         }
     }
 }

@@ -8,7 +8,9 @@ public enum Config {
     DATABASE_PORT("database.port"),
     DATABASE_USER("database.user"),
     DATABASE_PASSWORD("database.password"),
-    DATABASE_DATABASE("database.database");
+    DATABASE_DATABASE("database.database"),
+    USE_MYSQL("use-mysql");
+
 
     private final String path;
 

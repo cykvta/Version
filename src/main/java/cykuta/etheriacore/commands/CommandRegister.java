@@ -33,7 +33,6 @@ public class CommandRegister {
         plugin.getCommand("day").setExecutor(new TimeChanger(0));
         plugin.getCommand("night").setExecutor(new TimeChanger(18000));
 
-
         plugin.getCommand("sun").setExecutor(new WeatherChanger(WeatherTypes.SUN));
         plugin.getCommand("rain").setExecutor(new WeatherChanger(WeatherTypes.RAIN));
         plugin.getCommand("thunder").setExecutor(new WeatherChanger(WeatherTypes.THUNDER));

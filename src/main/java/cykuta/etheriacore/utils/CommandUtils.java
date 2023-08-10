@@ -14,6 +14,7 @@ public class CommandUtils {
         return true;
     }
 
+    // Check if database is enabled
     public static boolean isDatabaseEnabled(Player player){
         if(EtheriaCore.conn == null){
             Chat.playerMsg(player, LangError.DATABASE_DISABLED.value);
