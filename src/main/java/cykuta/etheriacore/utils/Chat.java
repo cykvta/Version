@@ -13,6 +13,12 @@ public class Chat {
         player.sendMessage(Chat.color(msg));
     }
 
+    public static void sendGlobalMessage(String msg){
+        for(Player player : Bukkit.getOnlinePlayers()){
+            player.sendMessage(Chat.color(msg));
+        }
+    }
+
     public static void consoleMsg(String msg){
         Bukkit.getConsoleSender().sendMessage(Chat.color(msg));
     }

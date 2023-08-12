@@ -15,3 +15,6 @@ teleport-expire: 30
 # Join and quit custom messages
 join-msg: "none"
 quit-msg: "none"
+
+# Night skip (use 100 to disable)
+percentage-to-skip-night: 50

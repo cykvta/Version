@@ -1,8 +1,7 @@
 package cykuta.etheriacore.database;
 
 import cykuta.etheriacore.EtheriaCore;
-import cykuta.etheriacore.config.Config;
-import cykuta.etheriacore.config.ConfigManager;
+import cykuta.etheriacore.files.config.Config;
 
 import java.sql.*;
 

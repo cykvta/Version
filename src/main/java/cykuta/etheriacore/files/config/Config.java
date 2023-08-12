@@ -1,4 +1,4 @@
-package cykuta.etheriacore.config;
+package cykuta.etheriacore.files.config;
 
 import cykuta.etheriacore.EtheriaCore;
 
@@ -11,7 +11,9 @@ public enum Config {
     DATABASE_USER("database.user"),
     DATABASE_PASSWORD("database.password"),
     DATABASE_DATABASE("database.database"),
-    USE_MYSQL("use-mysql");
+    USE_MYSQL("use-mysql"),
+    PERCENTAGE_TO_SKIP_NIGHT("percentage-to-skip-night"),
+    ;
 
 
     private final String path;

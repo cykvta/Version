@@ -1,7 +1,7 @@
 package cykuta.etheriacore.commands.shortcuts.time;
 
-import cykuta.etheriacore.lang.LangError;
-import cykuta.etheriacore.lang.LangSuccess;
+import cykuta.etheriacore.files.lang.LangError;
+import cykuta.etheriacore.files.lang.LangSuccess;
 import cykuta.etheriacore.utils.Chat;
 import org.bukkit.Bukkit;
 import org.bukkit.World;

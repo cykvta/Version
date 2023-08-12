@@ -1,4 +1,4 @@
-package cykuta.etheriacore.config;
+package cykuta.etheriacore.files.config;
 
 import cykuta.etheriacore.EtheriaCore;
 import org.bukkit.configuration.InvalidConfigurationException;

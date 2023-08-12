@@ -1,7 +1,7 @@
 package cykuta.etheriacore.utils;
 
 import cykuta.etheriacore.EtheriaCore;
-import cykuta.etheriacore.lang.LangError;
+import cykuta.etheriacore.files.lang.LangError;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

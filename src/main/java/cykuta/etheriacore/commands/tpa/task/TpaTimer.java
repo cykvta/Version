@@ -1,7 +1,7 @@
 package cykuta.etheriacore.commands.tpa.task;
 
 import cykuta.etheriacore.EtheriaCore;
-import cykuta.etheriacore.lang.LangSuccess;
+import cykuta.etheriacore.files.lang.LangSuccess;
 import cykuta.etheriacore.utils.Chat;
 import cykuta.etheriacore.commands.tpa.TpaRequest;
 import org.bukkit.entity.Player;

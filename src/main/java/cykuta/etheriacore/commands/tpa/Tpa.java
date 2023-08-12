@@ -1,8 +1,8 @@
 package cykuta.etheriacore.commands.tpa;
 
 import cykuta.etheriacore.EtheriaCore;
-import cykuta.etheriacore.lang.LangError;
-import cykuta.etheriacore.lang.LangSuccess;
+import cykuta.etheriacore.files.lang.LangError;
+import cykuta.etheriacore.files.lang.LangSuccess;
 import cykuta.etheriacore.utils.Chat;
 import cykuta.etheriacore.utils.CommandUtils;
 import org.bukkit.Bukkit;

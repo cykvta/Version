@@ -1,4 +1,4 @@
-package cykuta.etheriacore.lang;
+package cykuta.etheriacore.files.lang;
 
 import cykuta.etheriacore.EtheriaCore;
 

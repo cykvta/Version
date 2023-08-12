@@ -1,7 +1,7 @@
 package cykuta.etheriacore.commands.shortcuts.gamemode;
 
-import cykuta.etheriacore.lang.LangError;
-import cykuta.etheriacore.lang.LangSuccess;
+import cykuta.etheriacore.files.lang.LangError;
+import cykuta.etheriacore.files.lang.LangSuccess;
 import cykuta.etheriacore.utils.Chat;
 import cykuta.etheriacore.utils.CommandUtils;
 import org.bukkit.Bukkit;

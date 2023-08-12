@@ -1,4 +1,4 @@
-package cykuta.etheriacore.lang;
+package cykuta.etheriacore.files.lang;
 
 import cykuta.etheriacore.EtheriaCore;
 
@@ -17,7 +17,11 @@ public enum LangSuccess {
     WEATHER_SET("weather-set"),
     NEW_HOME("home-new"),
     REMOVE_HOME("home-removed"),
-    TELEPORT_HOME("home-teleport");
+    TELEPORT_HOME("home-teleport"),
+    PLAYER_ENTER_BED("player-enter-bed"),
+    PLAYER_LEAVE_BED("player-leave-bed"),
+    NIGHT_SKIPPED("night-skipped"),
+    ;
 
     public final String value;
     LangSuccess(String path) {

@@ -3,8 +3,8 @@ package cykuta.etheriacore;
 import cykuta.etheriacore.commands.CommandRegister;
 import cykuta.etheriacore.database.Conn;
 import cykuta.etheriacore.events.EventRegister;
-import cykuta.etheriacore.config.ConfigManager;
-import cykuta.etheriacore.lang.LangManager;
+import cykuta.etheriacore.files.config.ConfigManager;
+import cykuta.etheriacore.files.lang.LangManager;
 import cykuta.etheriacore.utils.Chat;
 import org.bukkit.plugin.java.JavaPlugin;
 
