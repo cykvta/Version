@@ -1,6 +1,7 @@
 package cykuta.etheriacore.events;
 
 import cykuta.etheriacore.EtheriaCore;
+import cykuta.etheriacore.events.listeners.ChatFormatter;
 import cykuta.etheriacore.events.listeners.JoinAnnounce;
 import cykuta.etheriacore.events.listeners.PlayerSleep;
 import org.bukkit.entity.Player;
@@ -14,5 +15,6 @@ public class EventRegister {
         // Register events
         pluginManager.registerEvents(new JoinAnnounce(), plugin);
         pluginManager.registerEvents(new PlayerSleep(), plugin);
+        pluginManager.registerEvents(new ChatFormatter(), plugin);
     }
 }

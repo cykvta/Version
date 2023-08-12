@@ -18,3 +18,6 @@ quit-msg: "none"
 
 # Night skip (use 100 to disable)
 percentage-to-skip-night: 50
+
+# Chat format
+chat-format: "&f%player%: &7%message%"

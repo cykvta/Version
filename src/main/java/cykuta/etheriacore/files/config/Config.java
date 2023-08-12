@@ -13,6 +13,7 @@ public enum Config {
     DATABASE_DATABASE("database.database"),
     USE_MYSQL("use-mysql"),
     PERCENTAGE_TO_SKIP_NIGHT("percentage-to-skip-night"),
+    CHAT_FORMAT("chat-format"),
     ;
 
 
