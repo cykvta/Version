@@ -4,6 +4,7 @@ import cykuta.etheriacore.EtheriaCore;
 import cykuta.etheriacore.commands.tpa.task.TpaTimer;
 import cykuta.etheriacore.files.config.Config;
 import cykuta.etheriacore.files.config.ConfigManager;
+import cykuta.etheriacore.utils.CommandUtils;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -12,10 +13,10 @@ import java.util.Map;
 public class TpaRequest {
     private static final Map<Player, Player> tpaMap = new HashMap<Player, Player>();
 
-    public static void newRequest(EtheriaCore plugin, Player sender, Player target){
+    public static void newRequest(Player sender, Player target){
         tpaMap.put(target, sender);
         int time = Config.TELEPORT_EXPIRE.getInt();
-        new TpaTimer(plugin, sender, target).runTaskLaterAsynchronously(plugin, ConfigManager.secondToTicks(time));
+        new TpaTimer(sender, target).runTaskLaterAsynchronously(EtheriaCore.getPlugin(), CommandUtils.toTicks(time));
     }
 
     public static void removeRequest(Player target){

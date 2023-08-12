@@ -12,11 +12,6 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class Tpaccept implements CommandExecutor {
-    private final EtheriaCore plugin;
-
-    public Tpaccept(EtheriaCore plugin){
-        this.plugin = plugin;
-    }
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {

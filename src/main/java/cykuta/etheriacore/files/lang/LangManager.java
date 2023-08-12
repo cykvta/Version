@@ -13,11 +13,13 @@ import java.io.IOException;
 public class LangManager {
     private FileConfiguration lang;
 
-    public LangManager(EtheriaCore plugin) throws IOException, InvalidConfigurationException {
-        registerLang(plugin);
+    public LangManager() throws IOException, InvalidConfigurationException {
+        registerLang();
     }
 
-    public void registerLang(EtheriaCore plugin) throws IOException, InvalidConfigurationException {
+    public void registerLang() throws IOException, InvalidConfigurationException {
+        // Get plugin instance
+        EtheriaCore plugin = EtheriaCore.getPlugin();
         File file = new File(plugin.getDataFolder(), "lang.yml"); // Create File object
         if (!file.exists()) plugin.saveResource("lang.yml", false);
 

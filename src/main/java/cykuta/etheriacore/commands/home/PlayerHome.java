@@ -18,7 +18,7 @@ public class PlayerHome{
 
     public PlayerHome(Player player) throws SQLException {
         this.player = player;
-        this.conn = EtheriaCore.conn.getConnection();
+        this.conn = EtheriaCore.getConn().getConnection();
         this.stmt = conn.createStatement();
     }
 

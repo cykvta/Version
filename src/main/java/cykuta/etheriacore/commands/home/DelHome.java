@@ -18,8 +18,6 @@ public class DelHome implements CommandExecutor {
         if(!CommandUtils.isPlayer(sender)) return false;
         Player player = (Player) sender;
 
-        if(!CommandUtils.isDatabaseEnabled(player)) return false;
-
         try {
             PlayerHome home = new PlayerHome(player);
             if (!home.hasHome()) {

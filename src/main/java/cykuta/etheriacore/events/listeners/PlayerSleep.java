@@ -8,16 +8,13 @@ import cykuta.etheriacore.utils.Chat;
 import io.papermc.paper.event.player.PlayerDeepSleepEvent;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
 
 import java.util.ArrayList;
 
-public class PlayerSleep extends Event {
+public class PlayerSleep implements Listener {
     private final ArrayList<Player> sleepingPlayers = new ArrayList<>();
-
-    public PlayerSleep(EtheriaCore plugin) {
-        super(plugin);
-    }
 
     @EventHandler
     public void onPlayerSleep(PlayerDeepSleepEvent event) {

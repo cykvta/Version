@@ -5,14 +5,11 @@ import cykuta.etheriacore.files.config.Config;
 import cykuta.etheriacore.events.Event;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-public class JoinAnnounce extends Event {
-
-    public JoinAnnounce(EtheriaCore plugin) {
-        super(plugin);
-    }
+public class JoinAnnounce implements Listener {
 
     @EventHandler
     public void playerJoin(PlayerJoinEvent e){

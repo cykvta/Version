@@ -7,19 +7,12 @@ import org.bukkit.entity.Player;
 
 public class CommandUtils {
     public static boolean isPlayer(CommandSender sender){
-        if(!(sender instanceof Player)){
-            Chat.consoleMsg(LangError.PLAYER_COMMAND.value);
-            return false;
-        }
-        return true;
+        if(sender instanceof Player) return true;
+        Chat.consoleMsg(LangError.PLAYER_COMMAND.value);
+        return false;
     }
 
-    // Check if database is enabled
-    public static boolean isDatabaseEnabled(Player player){
-        if(EtheriaCore.conn == null){
-            Chat.playerMsg(player, LangError.DATABASE_DISABLED.value);
-            return false;
-        }
-        return true;
-    }
+    public static long toTicks(int sec){
+        return sec * 20L;
+    };
 }

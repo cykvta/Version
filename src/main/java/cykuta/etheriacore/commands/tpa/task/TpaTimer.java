@@ -10,12 +10,10 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class TpaTimer extends BukkitRunnable {
     private final Player sender;
     private final Player target;
-    private final EtheriaCore plugin;
 
-    public TpaTimer(EtheriaCore plugin, Player sender, Player target){
+    public TpaTimer(Player sender, Player target){
         this.sender = sender;
         this.target = target;
-        this.plugin = plugin;
     }
 
     @Override

@@ -9,35 +9,39 @@ import cykuta.etheriacore.utils.Chat;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class EtheriaCore extends JavaPlugin {
-    public static ConfigManager cfg;
-    public static LangManager lang;
-    public static Conn conn = null;
+    private static ConfigManager cfg;
+    private static LangManager lang;
+    private static Conn conn = null;
+    private static EtheriaCore plugin;
 
     @Override
     public void onEnable() {
+        // Set instance
+        plugin = this;
+
         // Load config lang and db
         loadFiles();
 
         // Event register
-        EventRegister events = new EventRegister(getServer().getPluginManager(), this);
-        events.registerEvents();
+        EventRegister.registerEvents();
 
         // Command register
-        CommandRegister cmd = new CommandRegister(this);
-        cmd.registerCommands();
+        CommandRegister.registerCommands();
     }
 
     public void loadFiles() {
         try {
-            cfg = new ConfigManager(this);
-            lang = new LangManager(this);
+            cfg = new ConfigManager();
+            lang = new LangManager();
             conn = new Conn(); // Connect to database
-
-
         } catch (Exception e){
             Chat.consoleMsg("&4ERROR ON FILES: &e" + e.getMessage());
             getServer().getPluginManager().disablePlugin(this);
         }
+    }
+
+    public static EtheriaCore getPlugin(){
+        return plugin;
     }
 
     public static ConfigManager getConfigManager(){
@@ -46,5 +50,9 @@ public final class EtheriaCore extends JavaPlugin {
 
     public static LangManager getLangManager(){
         return lang;
+    }
+
+    public static Conn getConn(){
+        return conn;
     }
 }

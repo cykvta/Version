@@ -13,12 +13,6 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class Tpa implements CommandExecutor {
-    private final EtheriaCore plugin;
-
-    public Tpa(EtheriaCore plugin){
-        this.plugin = plugin;
-    }
-
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(!CommandUtils.isPlayer(sender)) return false;
@@ -39,7 +33,8 @@ public class Tpa implements CommandExecutor {
             Chat.playerMsg(player, LangError.AUTO_TARGET.value);
             return false;
         }
-        TpaRequest.newRequest(plugin, player, target);
+
+        TpaRequest.newRequest(player, target);
 
         Chat.playerMsg(player, LangSuccess.TELEPORT_SEND.value.replaceAll("%player%", target.getName()));
         Chat.playerMsg(target, LangSuccess.TELEPORT_REQUEST.value.replaceAll("%player%", player.getName()));

@@ -7,17 +7,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 
 public class EventRegister {
+    public static void registerEvents(){
+        EtheriaCore plugin = EtheriaCore.getPlugin();
+        PluginManager pluginManager  = plugin.getServer().getPluginManager();
 
-    private final PluginManager pluginManager;
-    private final EtheriaCore plugin;
-    public EventRegister(final PluginManager pluginManager, EtheriaCore plugin){
-        this.pluginManager = pluginManager;
-        this.plugin = plugin;
-    }
-
-    // Register events
-    public void registerEvents(){
-        pluginManager.registerEvents(new JoinAnnounce(plugin), plugin);
-        pluginManager.registerEvents(new PlayerSleep(plugin), plugin);
+        // Register events
+        pluginManager.registerEvents(new JoinAnnounce(), plugin);
+        pluginManager.registerEvents(new PlayerSleep(), plugin);
     }
 }

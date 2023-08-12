@@ -12,11 +12,6 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class Tpdeny implements CommandExecutor {
-    private final EtheriaCore plugin;
-
-    public Tpdeny(EtheriaCore plugin){
-        this.plugin = plugin;
-    }
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if(!CommandUtils.isPlayer(sender)) return false;
