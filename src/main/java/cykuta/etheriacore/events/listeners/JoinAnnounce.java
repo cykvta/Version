@@ -1,8 +1,6 @@
 package cykuta.etheriacore.events.listeners;
 
-import cykuta.etheriacore.EtheriaCore;
 import cykuta.etheriacore.files.config.Config;
-import cykuta.etheriacore.events.Event;
 import cykuta.etheriacore.utils.Chat;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

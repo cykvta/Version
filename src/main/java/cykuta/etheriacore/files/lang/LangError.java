@@ -13,7 +13,9 @@ public enum LangError {
     DATABASE_DISABLED("error-database-disabled"),
     NO_HOMES("error-no-homes"),
     MAX_HOMES("error-max-homes"),
-    HOME_LOCATION("error-home-location");
+    HOME_LOCATION("error-home-location"),
+    TIME_SKIP_IN_PROGRESS("error-time-skip-in-progress"),
+    ;
 
     public final String value;
     LangError(String path) {

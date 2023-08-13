@@ -1,11 +1,13 @@
 package cykuta.etheriacore.events.listeners;
 
 import cykuta.etheriacore.EtheriaCore;
-import cykuta.etheriacore.events.Event;
 import cykuta.etheriacore.files.config.Config;
+import cykuta.etheriacore.files.lang.LangError;
 import cykuta.etheriacore.files.lang.LangSuccess;
 import cykuta.etheriacore.utils.Chat;
+import cykuta.etheriacore.utils.TimeLapse;
 import io.papermc.paper.event.player.PlayerDeepSleepEvent;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -39,9 +41,11 @@ public class PlayerSleep implements Listener {
 
         // Verify if % of sleeping players is greater than % of needed players to skip night
         if (sleepingPlayersInWorld >= neededPlayers) {
+            if (TimeLapse.isRunning()) return;
 
             // Skip night
-            player.getWorld().setTime(0);
+            World world = player.getWorld();
+            new TimeLapse(world, 0).runTaskTimer(EtheriaCore.getPlugin(), 0, 1);
 
             // Clear sleeping players list
             sleepingPlayers.clear();

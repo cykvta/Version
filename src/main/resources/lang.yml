@@ -14,9 +14,10 @@ error-database-disabled: 'Este comando requiere la activacion de una base de dat
 error-max-homes: 'Ya tienes la cantidad maxima de hogares.'
 error-no-homes: 'No tienes hogares disponibles.'
 error-home-location: 'Hay un error con los datos de tu hogar, contacta a un administrador.'
+error-time-skip-in-progress: 'No puedes realizar esta accion mientras se esta saltando el tiempo.'
 
-# Success messages
 teleport-send: 'Realizaste una peticion de teletrasporte a &6%player%.'
+# Success messages
 teleport-request: 'El usuario &6%player% &7quiere teletrasnportarse contigo.'
 teleport-actions: 'Para responder usa: &a/aceptar &7o &c/denegar'
 teleport-accept: 'Aceptaste la peticion de teletransporte de ansporte.'

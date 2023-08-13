@@ -23,7 +23,7 @@ public enum CommandRegister {
     ADVENTURE("adventure", new GamemodeChanger(GameMode.ADVENTURE)),
     SPECTATOR("spectator", new GamemodeChanger(GameMode.SPECTATOR)),
     DAY("day", new TimeChanger(0)),
-    NIGHT("night", new TimeChanger(18000)),
+    NIGHT("night", new TimeChanger(15000)),
     SUN("sun", new WeatherChanger(WeatherTypes.SUN)),
     RAIN("rain", new WeatherChanger(WeatherTypes.RAIN)),
     THUNDER("thunder", new WeatherChanger(WeatherTypes.THUNDER)),
