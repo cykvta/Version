@@ -3,6 +3,7 @@ package cykuta.etheriacore.events.listeners;
 import cykuta.etheriacore.EtheriaCore;
 import cykuta.etheriacore.files.config.Config;
 import cykuta.etheriacore.events.Event;
+import cykuta.etheriacore.utils.Chat;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,7 +17,12 @@ public class JoinAnnounce implements Listener {
         String msg = Config.JOIN_MSG.getString();
         if (msg.equalsIgnoreCase("none")) return;
         Player player = e.getPlayer();
-        e.setJoinMessage(msg.replaceAll("%player%", player.getName()));
+
+        // Format message
+        msg = Chat.color(msg);
+        msg = msg.replace("%player%", player.getName());
+
+        e.setJoinMessage(msg);
     }
 
     @EventHandler
@@ -24,6 +30,11 @@ public class JoinAnnounce implements Listener {
         String msg = Config.QUIT_MSG.getString();
         if (msg.equalsIgnoreCase("none")) return;
         Player player = e.getPlayer();
-        e.setQuitMessage(msg.replaceAll("%player%", player.getName()));
+
+        // Format message
+        msg = Chat.color(msg);
+        msg = msg.replace("%player%", player.getName());
+
+        e.setQuitMessage(msg);
     }
 }
