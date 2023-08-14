@@ -4,15 +4,14 @@ import cykuta.etheriacore.EtheriaCore;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 
-public class ConfigManager {
+public class ConfigFileManager {
     private FileConfiguration config;
 
-    public ConfigManager() throws IOException, InvalidConfigurationException {
+    public ConfigFileManager() throws IOException, InvalidConfigurationException {
         registerConfig();
     }
 

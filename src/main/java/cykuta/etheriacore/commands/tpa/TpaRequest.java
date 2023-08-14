@@ -3,7 +3,6 @@ package cykuta.etheriacore.commands.tpa;
 import cykuta.etheriacore.EtheriaCore;
 import cykuta.etheriacore.commands.tpa.task.TpaTimer;
 import cykuta.etheriacore.files.config.Config;
-import cykuta.etheriacore.files.config.ConfigManager;
 import cykuta.etheriacore.utils.CommandUtils;
 import org.bukkit.entity.Player;
 

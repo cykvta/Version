@@ -1,46 +1,46 @@
 package cykuta.etheriacore.commands.shortcuts.time;
 
-import cykuta.etheriacore.files.lang.LangError;
-import cykuta.etheriacore.files.lang.LangSuccess;
+import cykuta.etheriacore.commands.CoreCommand;
+import cykuta.etheriacore.files.lang.Lang;
 import cykuta.etheriacore.utils.Chat;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 
-public class WeatherChanger implements CommandExecutor {
-    private final WeatherTypes weather;
-    public WeatherChanger(WeatherTypes weather){
+public class WeatherChanger extends CoreCommand {
+    private final WeatherType weather;
+    public WeatherChanger(WeatherType weather){
         this.weather = weather;
+        setAllowConsole(true);
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public boolean exec(CommandSender sender, String[] args) {
         World world;
+
         if (!(sender instanceof Player)) {
             if (args.length == 0){
-                Chat.consoleMsg(LangError.USAGE.value.replaceAll("%usage%", command.getUsage()));
+                Chat.consoleMsg(Lang.USAGE.get().replaceAll("%usage%", usage));
                 return false;
             }
+
             world = Bukkit.getServer().getWorld(args[0]);
 
             if (world == null){
-                Chat.consoleMsg(LangError.WEATHER_WORLD.value.replaceAll("%world%", args[0]));
+                Chat.consoleMsg(Lang.WEATHER_WORLD.get().replaceAll("%world%", args[0]));
                 return false;
             }
 
-            Chat.consoleMsg(LangSuccess.WEATHER_SET.value
+            Chat.consoleMsg(Lang.WEATHER_SET.get()
                     .replaceAll("%world%", world.getName())
-                    .replaceAll("%weather%", String.valueOf(weather.name())));
+                    .replaceAll("%weather%", weather.getLang().get()));
         }else {
             Player player = (Player) sender;
             world = player.getWorld();
-            Chat.playerMsg(player, LangSuccess.WEATHER_SET.value
+            Chat.reply(player, Lang.WEATHER_SET.get()
                     .replaceAll("%world%", world.getName())
-                    .replaceAll("%weather%", String.valueOf(weather.name())));
+                    .replaceAll("%weather%", weather.getLang().get()));
         }
 
         switch (weather){

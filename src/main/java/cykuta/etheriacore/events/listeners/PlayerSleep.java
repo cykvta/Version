@@ -2,8 +2,7 @@ package cykuta.etheriacore.events.listeners;
 
 import cykuta.etheriacore.EtheriaCore;
 import cykuta.etheriacore.files.config.Config;
-import cykuta.etheriacore.files.lang.LangError;
-import cykuta.etheriacore.files.lang.LangSuccess;
+import cykuta.etheriacore.files.lang.Lang;
 import cykuta.etheriacore.utils.Chat;
 import cykuta.etheriacore.utils.TimeLapse;
 import io.papermc.paper.event.player.PlayerDeepSleepEvent;
@@ -32,7 +31,7 @@ public class PlayerSleep implements Listener {
         int neededPlayers = (int) Math.ceil(playersInWorld * percent / 100.0);
 
         // Format message
-        String msg = LangSuccess.PLAYER_ENTER_BED.value.replace("%player%", player.getName())
+        String msg = Lang.PLAYER_ENTER_BED.get().replace("%player%", player.getName())
                 .replace("%sleeping_players%", String.valueOf(sleepingPlayersInWorld))
                 .replace("%needed_players%", String.valueOf(neededPlayers));
 
@@ -51,7 +50,7 @@ public class PlayerSleep implements Listener {
             sleepingPlayers.clear();
 
             // Send message to all players in the world
-            Chat.sendGlobalMessage(LangSuccess.NIGHT_SKIPPED.value);
+            Chat.sendGlobalMessage(Lang.NIGHT_SKIPPED.get());
         }
     }
 
@@ -72,7 +71,7 @@ public class PlayerSleep implements Listener {
         int neededPlayers = (int) Math.ceil(playersInWorld * percent / 100.0);
 
         // Format message
-        String msg = LangSuccess.PLAYER_LEAVE_BED.value.replace("%player%", player.getName())
+        String msg = Lang.PLAYER_LEAVE_BED.get().replace("%player%", player.getName())
                 .replace("%sleeping_players%", String.valueOf(sleepingPlayersInWorld))
                 .replace("%needed_players%", String.valueOf(neededPlayers));
 

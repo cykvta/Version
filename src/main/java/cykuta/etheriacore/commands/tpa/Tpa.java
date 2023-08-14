@@ -1,44 +1,44 @@
 package cykuta.etheriacore.commands.tpa;
 
-import cykuta.etheriacore.EtheriaCore;
-import cykuta.etheriacore.files.lang.LangError;
-import cykuta.etheriacore.files.lang.LangSuccess;
+import cykuta.etheriacore.commands.CoreCommand;
+import cykuta.etheriacore.files.lang.Lang;
 import cykuta.etheriacore.utils.Chat;
-import cykuta.etheriacore.utils.CommandUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 
-public class Tpa implements CommandExecutor {
+public class Tpa extends CoreCommand {
+
+    public Tpa(){
+        setAllowConsole(false);
+    }
+
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        if(!CommandUtils.isPlayer(sender)) return false;
-
+    public boolean exec(CommandSender sender, String[] args) {
         Player player = (Player) sender;
+
         if(args.length != 1){
-            Chat.playerMsg(player, LangError.USAGE.value.replaceAll("%usage%" ,command.getUsage()));
+            Chat.reply(player, Lang.USAGE.get().replaceAll("%usage%", usage));
             return false;
         }
+
         Player target = Bukkit.getPlayer(args[0]);
 
         if (target == null){
-            Chat.playerMsg(player, LangError.NO_PLAYER.value);
+            Chat.reply(player, Lang.NO_PLAYER.get());
             return false;
         }
 
         if (target == player){
-            Chat.playerMsg(player, LangError.AUTO_TARGET.value);
+            Chat.reply(player, Lang.AUTO_TARGET.get());
             return false;
         }
 
         TpaRequest.newRequest(player, target);
 
-        Chat.playerMsg(player, LangSuccess.TELEPORT_SEND.value.replaceAll("%player%", target.getName()));
-        Chat.playerMsg(target, LangSuccess.TELEPORT_REQUEST.value.replaceAll("%player%", player.getName()));
-        Chat.playerMsg(target, LangSuccess.TELEPORT_ACTIONS.value.replaceAll("%player%", player.getName()));
+        Chat.reply(player, Lang.TELEPORT_SEND.get().replaceAll("%player%", target.getName()));
+        Chat.reply(target, Lang.TELEPORT_REQUEST.get().replaceAll("%player%", player.getName()));
+        Chat.reply(target, Lang.TELEPORT_ACTIONS.get().replaceAll("%player%", player.getName()));
         return true;
     }
 }

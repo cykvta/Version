@@ -3,14 +3,14 @@ package cykuta.etheriacore;
 import cykuta.etheriacore.commands.CommandRegister;
 import cykuta.etheriacore.database.Conn;
 import cykuta.etheriacore.events.EventRegister;
-import cykuta.etheriacore.files.config.ConfigManager;
-import cykuta.etheriacore.files.lang.LangManager;
+import cykuta.etheriacore.files.config.ConfigFileManager;
+import cykuta.etheriacore.files.lang.LangFileManager;
 import cykuta.etheriacore.utils.Chat;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class EtheriaCore extends JavaPlugin {
-    private static ConfigManager cfg;
-    private static LangManager lang;
+    private static ConfigFileManager cfg;
+    private static LangFileManager lang;
     private static Conn conn = null;
     private static EtheriaCore plugin;
 
@@ -31,8 +31,8 @@ public final class EtheriaCore extends JavaPlugin {
 
     public void loadFiles() {
         try {
-            cfg = new ConfigManager();
-            lang = new LangManager();
+            cfg = new ConfigFileManager();
+            lang = new LangFileManager();
             conn = new Conn(); // Connect to database
         } catch (Exception e){
             Chat.consoleMsg("&4ERROR ON FILES: &e" + e.getMessage());
@@ -44,11 +44,11 @@ public final class EtheriaCore extends JavaPlugin {
         return plugin;
     }
 
-    public static ConfigManager getConfigManager(){
+    public static ConfigFileManager getConfigManager(){
         return cfg;
     }
 
-    public static LangManager getLangManager(){
+    public static LangFileManager getLangManager(){
         return lang;
     }
 

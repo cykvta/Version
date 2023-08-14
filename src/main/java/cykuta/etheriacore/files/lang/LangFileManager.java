@@ -5,15 +5,14 @@ import cykuta.etheriacore.utils.Chat;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 
-public class LangManager {
+public class LangFileManager {
     private FileConfiguration lang;
 
-    public LangManager() throws IOException, InvalidConfigurationException {
+    public LangFileManager() throws IOException, InvalidConfigurationException {
         registerLang();
     }
 

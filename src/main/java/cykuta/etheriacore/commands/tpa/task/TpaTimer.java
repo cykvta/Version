@@ -1,7 +1,6 @@
 package cykuta.etheriacore.commands.tpa.task;
 
-import cykuta.etheriacore.EtheriaCore;
-import cykuta.etheriacore.files.lang.LangSuccess;
+import cykuta.etheriacore.files.lang.Lang;
 import cykuta.etheriacore.utils.Chat;
 import cykuta.etheriacore.commands.tpa.TpaRequest;
 import org.bukkit.entity.Player;
@@ -20,7 +19,7 @@ public class TpaTimer extends BukkitRunnable {
     public void run() {
         if(TpaRequest.hasRequest(target)){
             TpaRequest.removeRequest(target);
-            Chat.playerMsg(sender, LangSuccess.TELEPORT_EXPIRED.value.replaceAll("%player%", target.getName()));
+            Chat.reply(sender, Lang.TELEPORT_EXPIRED.get().replaceAll("%player%", target.getName()));
         }
     }
 }

@@ -2,6 +2,7 @@ package cykuta.etheriacore.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class Chat {
@@ -9,7 +10,7 @@ public class Chat {
         return ChatColor.translateAlternateColorCodes('&', msg);
     }
 
-    public static void playerMsg( Player player, String msg){
+    public static void reply(CommandSender player, String msg){
         player.sendMessage(Chat.color(msg));
     }
 

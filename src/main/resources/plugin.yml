@@ -6,61 +6,46 @@ authors: [ Cykuta ]
 commands:
   tpa:
     description: Send a teleport request to someone user
-    permission: core.tp
     aliases: [teleport]
   tpaccept:
     description: Accepts a pending teleport request
-    permission: core.tp
     aliases: [aceptar, accept]
   tpdeny:
     description: Deny a pending teleport request
-    permission: core.tp
     aliases: [denegar, deny]
   creative:
     description: Change your gamemode
-    permission: core.gamemode.creative
     aliases: [gmc]
   survival:
     description: Change your gamemode
-    permission: core.gamemode.survival
     aliases: [gms]
   adventure:
     description: Change your gamemode
-    permission: core.gamemode.adventure
     aliases: [gma]
   spectator:
     description: Change your gamemode
-    permission: core.gamemode.spectator
     aliases: [gmsp]
   day:
     description: Change time to day
-    permission: core.time
     aliases: [dia]
   night:
     description: Change time to night
-    permission: core.time
     aliases: [noche]
   sun:
     description: Change weather to sun
-    permission: core.weather
     aliases: [soleado]
   rain:
     description: Change weather to rain
-    permission: core.weather
     aliases: [lluvia]
   thunder:
     description: Change weather to thunder
-    permission: core.weather
     aliases: [tormenta, storm]
   home:
     description: Go to your home here
-    permission: core.home
     aliases: []
   sethome:
     description: Set your home here
-    permission: core.home
     aliases: []
   delhome:
     description: Remove your home
-    permission: core.home
     aliases: []
