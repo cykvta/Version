@@ -1,10 +1,14 @@
 package cykuta.etheriacore;
 
-import cykuta.etheriacore.commands.CommandRegister;
 import cykuta.etheriacore.database.Conn;
-import cykuta.etheriacore.events.EventRegister;
 import cykuta.etheriacore.files.config.ConfigFileManager;
 import cykuta.etheriacore.files.lang.LangFileManager;
+import cykuta.etheriacore.modules.ModuleManager;
+import cykuta.etheriacore.modules.chat.ChatModule;
+import cykuta.etheriacore.modules.home.HomeModule;
+import cykuta.etheriacore.modules.shortcuts.ShortcutsModule;
+import cykuta.etheriacore.modules.sleep.SleepModule;
+import cykuta.etheriacore.modules.tpa.TpaModule;
 import cykuta.etheriacore.utils.Chat;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,6 +17,7 @@ public final class EtheriaCore extends JavaPlugin {
     private static LangFileManager lang;
     private static Conn conn = null;
     private static EtheriaCore plugin;
+    private ModuleManager moduleManager;
 
     @Override
     public void onEnable() {
@@ -22,11 +27,22 @@ public final class EtheriaCore extends JavaPlugin {
         // Load config lang and db
         loadFiles();
 
-        // Event register
-        EventRegister.registerEvents();
+        // Load module manager
+        moduleManager = new ModuleManager();
 
-        // Command register
-        CommandRegister.registerCommands();
+        // Register modules
+        registerModules();
+
+        // Load modules
+        moduleManager.loadModules();
+    }
+
+    public void registerModules() {
+        moduleManager.registerModule(new HomeModule());
+        moduleManager.registerModule(new ShortcutsModule());
+        moduleManager.registerModule(new TpaModule());
+        moduleManager.registerModule(new ChatModule());
+        moduleManager.registerModule(new SleepModule());
     }
 
     public void loadFiles() {
