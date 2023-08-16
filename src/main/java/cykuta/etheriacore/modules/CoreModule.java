@@ -2,6 +2,8 @@ package cykuta.etheriacore.modules;
 
 import cykuta.etheriacore.EtheriaCore;
 import cykuta.etheriacore.CoreCommand;
+import cykuta.etheriacore.utils.Chat;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 
@@ -14,7 +16,14 @@ public abstract class CoreModule {
     public abstract void registerOthers();
 
     protected void registerCommand(CoreCommand exec, String name, String permission) {
-        plugin.getCommand(name).setExecutor(exec);
+        PluginCommand cmd = plugin.getCommand(name);
+
+        if (cmd == null) {
+            Chat.consoleMsg("&cFailed to register command: " + name);
+            return;
+        }
+
+        cmd.setExecutor(exec);
         exec.setPermission(permission);
     }
 

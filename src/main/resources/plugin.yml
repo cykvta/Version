@@ -49,3 +49,12 @@ commands:
   delhome:
     description: Remove your home
     aliases: []
+  register:
+    description: Register your account
+    aliases: [reg]
+  login:
+    description: Login to your account
+    aliases: [l]
+  changepassword:
+    description: Change your password
+    aliases: [changepass, changepw]

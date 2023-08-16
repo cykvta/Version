@@ -1,7 +1,24 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#   ______                ______            _____       #
+#  / ____/___  ________  / ____/___  ____  / __(_)___ _ #
+# / /   / __ \/ ___/ _ \/ /   / __ \/ __ \/ /_/ / __ `/ #
+#/ /___/ /_/ / /  /  __/ /___/ /_/ / / / / __/ / /_/ /  #
+#\____/\____/_/   \___/\____/\____/_/ /_/_/ /_/\__, /   #
+#                                             /____/    #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                 * General configuration
+
+# Tpa expire time (in seconds)
+teleport-expire: 30
+
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                  * Database configuration
+
 # Database type (true = MySQL, false = SQLite)
 use-mysql: false
 
-# MySQL Config, only if use-mysql is true
+# If you use MySQL, fill in the following information:
 database:
   ip: ""
   port: ""
@@ -9,15 +26,44 @@ database:
   password: ""
   database: ""
 
-# Teleport expire time in seconds
-teleport-expire: 30
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                  * Sleep configuration
 
-# Join and quit custom messages
+# Percentage of players that need sleep to skip night
+percentage-to-skip-night: 50
+
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                  * Chat configuration
+
+chat-format: "&f%player%: &7%message%"
 join-msg: "none"
 quit-msg: "none"
 
-# Night skip (use 100 to disable)
-percentage-to-skip-night: 50
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                  * Login configuration
 
-# Chat format
-chat-format: "&f%player%: &7%message%"
+# Password length
+min-password-length: 4
+max-password-length: 16
+
+# Login / Register timeout (in seconds)
+auth-timeout: 60
+
+# Allowed characters in password
+allowed-characters: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+
+# Salt for password encryption (leave empty for random salt)
+# DON'T CHANGE THIS AFTER YOU HAVE REGISTERED!
+# IF YOU CHANGE THIS, ALL PASSWORDS WILL BE INVALID!
+# DON'T SHARE THIS WITH ANYONE!
+password-salt: ""
+
+# Allowed commands before login
+allowed-commands:
+  - "login"
+  - "l"
+  - "register"
+  - "reg"

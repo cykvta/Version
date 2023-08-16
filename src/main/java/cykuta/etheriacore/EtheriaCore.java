@@ -6,6 +6,7 @@ import cykuta.etheriacore.files.lang.LangFileManager;
 import cykuta.etheriacore.modules.ModuleManager;
 import cykuta.etheriacore.modules.chat.ChatModule;
 import cykuta.etheriacore.modules.home.HomeModule;
+import cykuta.etheriacore.modules.login.LoginModule;
 import cykuta.etheriacore.modules.shortcuts.ShortcutsModule;
 import cykuta.etheriacore.modules.sleep.SleepModule;
 import cykuta.etheriacore.modules.tpa.TpaModule;
@@ -43,6 +44,7 @@ public final class EtheriaCore extends JavaPlugin {
         moduleManager.registerModule(new TpaModule());
         moduleManager.registerModule(new ChatModule());
         moduleManager.registerModule(new SleepModule());
+        moduleManager.registerModule(new LoginModule());
     }
 
     public void loadFiles() {

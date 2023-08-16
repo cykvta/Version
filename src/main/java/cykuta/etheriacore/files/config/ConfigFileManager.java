@@ -7,9 +7,11 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class ConfigFileManager {
     private FileConfiguration config;
+    private File file;
 
     public ConfigFileManager() throws IOException, InvalidConfigurationException {
         registerConfig();
@@ -18,11 +20,11 @@ public class ConfigFileManager {
     public void registerConfig() throws IOException, InvalidConfigurationException {
         // Get plugin instance
         EtheriaCore plugin = EtheriaCore.getPlugin();
-        File file = new File(plugin.getDataFolder(), "config.yml"); // Create File object
-        if (!file.exists()) plugin.saveResource("config.yml", false);
+        this.file = new File(plugin.getDataFolder(), "config.yml"); // Create File object
+        if (!this.file.exists()) plugin.saveResource("config.yml", false);
 
         config = new YamlConfiguration(); // Create YamlConfiguration
-        config.load(file);
+        config.load(this.file);
     }
 
     public String getString(String path){
@@ -33,5 +35,27 @@ public class ConfigFileManager {
     }
     public boolean getBoolean(String path){
         return config.getBoolean(path);
+    }
+    public List<String> getStringList(String path){
+        return config.getStringList(path);
+    }
+
+    public void set(String path, Object value){
+        config.set(path, value);
+
+        // Save config
+        try {
+            config.save(this.file);
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to save config file", e);
+        }
+    }
+
+    public void reloadConfig() {
+        try {
+            config.load(this.file);
+        } catch (IOException | InvalidConfigurationException e) {
+            throw new RuntimeException("Unable to reload config file", e);
+        }
     }
 }

@@ -13,7 +13,7 @@ public class Conn {
         else useSqlite();
 
         // Create tables
-        createHomeTable();
+        createDefaultTables();
     }
 
     // Mysql Connection
@@ -35,9 +35,10 @@ public class Conn {
     }
 
     // Create home table
-    private void createHomeTable() throws SQLException {
+    private void createDefaultTables() throws SQLException {
         Statement stmt = getConnection().createStatement();
         stmt.execute("CREATE TABLE IF NOT EXISTS home (uid VARCHAR(36), x DOUBLE, y DOUBLE, z DOUBLE, yaw FLOAT, pitch FLOAT, world VARCHAR(36))");
+        stmt.execute("CREATE TABLE IF NOT EXISTS login (uid VARCHAR(36), password VARCHAR(36))");
     }
 
     // Get connection

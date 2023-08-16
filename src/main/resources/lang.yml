@@ -17,6 +17,16 @@ error:
   no-homes: 'No tienes hogares disponibles.'
   home-location: 'Hay un error con los datos de tu hogar, contacta a un administrador.'
   time-skip-in-progress: 'No puedes realizar esta accion mientras se esta saltando el tiempo.'
+  password-not-match: 'Las contraseñas no coinciden.'
+  register-error: 'Hay un error al registrarte, contacta a un administrador.'
+  already-registered: 'Ya estas registrado.'
+  not-registered: 'No estas registrado, usa /register <contraseña> <confirmar contraseña>'
+  bad-password: 'La contraseña es incorrecta.'
+  command-on-auth: 'Este comando no esta disponible mientras estas autenticado.'
+  password-bad-characters: 'La contraseña contiene caracteres no permitidos.'
+  password-bad-length: 'La contraseña debe tener entre %min% y %max% caracteres.'
+  already-logged-in: 'Ya estas autenticado.'
+  time-out: 'Se acabo el tiempo para iniciar sesion.'
 
 # Success messages
 success:
@@ -38,6 +48,11 @@ success:
   player-enter-bed: 'El jugador &6%player% &7se acosto en una cama (%sleeping_players%/%needed_players%).'
   player-leave-bed: 'El jugador &6%player% &7se levanto de la cama (%sleeping_players%/%needed_players%).'
   night-skipped: 'La noche fue saltada.'
+  register-success: 'Te has registrado correctamente.'
+  login-success: 'Te has logeado correctamente.'
+  pass-change: 'La contraseña fue cambiada correctamente.'
+  login: 'Inicia sesion con &6/login <contraseña>'
+  register: 'Registrate con &6/register <contraseña> <confirmar contraseña>'
 
 # Glossary
 glossary:
